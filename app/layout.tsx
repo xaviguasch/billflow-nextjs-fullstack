@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${leagueSpartan.variable} font-sans`}>{children}</body>
+      <body className={`${leagueSpartan.variable} bg-white-lilac font-sans`}>
+        {children}
+      </body>
     </html>
   );
 }
