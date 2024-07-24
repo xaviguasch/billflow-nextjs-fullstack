@@ -21,6 +21,8 @@ const config: Config = {
       "white-lilac": "#F8F8FB",
       mirage: "#141625",
       white: "#FFFFFF",
+      "aqua-green": "#33D69F",
+      "dark-orange": "#FF8F00",
     },
 
     extend: {

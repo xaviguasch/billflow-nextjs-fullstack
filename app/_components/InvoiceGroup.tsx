@@ -1,4 +1,5 @@
 import React from "react";
+import InvoicePreview from "./InvoicePreview";
 
 const InvoiceGroup = () => {
   return (
@@ -11,6 +12,8 @@ const InvoiceGroup = () => {
       </div>
 
       <div>Invoices list</div>
+
+      <InvoicePreview />
     </div>
   );
 };
