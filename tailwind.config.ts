@@ -7,11 +7,25 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      "medium-slate-blue": "#7C5DFA",
+      "purple-mimosa": "#9277FF",
+      dark: "#1E2139",
+      "ebony-clay": "#252945",
+      "link-water": "#DFE3FA",
+      "regent-gray": "#888EB0",
+      "wild-blue-yonder": "#7E88C3",
+      cinder: "#0C0E16",
+      "valentine-red": "#EC5757",
+      "light-salmon-pink": "#FF9797",
+      "white-lilac": "#F8F8FB",
+      mirage: "#141625",
+      white: "#FFFFFF",
+    },
+
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        sans: ["var(--font-league-spartan)"],
       },
     },
   },
