@@ -8,7 +8,7 @@ type InvoiceProps = {
 
 const InvoicePreview = ({ item }: InvoiceProps) => {
   return (
-    <div className="text-wild-blue-yonder bg-white grid grid-cols-2 grid-rows-2 rounded-lg p-6 text-xs font-medium">
+    <div className="text-wild-blue-yonder bg-white grid auto-rows-auto grid-cols-2 gap-y-6 rounded-lg p-6 text-xs font-medium">
       <p className="font-bold">
         #<span className="text-cinder font-bold">RT3080</span>
       </p>
