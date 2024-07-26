@@ -23,6 +23,7 @@ const config: Config = {
       white: "#FFFFFF",
       "aqua-green": "#33D69F",
       "dark-orange": "#FF8F00",
+      "bright-grey": "#373B53",
     },
 
     extend: {

@@ -2,6 +2,10 @@ import { Schema, model, models } from "mongoose";
 
 const InvoiceSchema = new Schema(
   {
+    original_id: {
+      type: String,
+      required: [true, "ID is required"],
+    },
     createdAt: {
       type: Date,
     },

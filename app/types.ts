@@ -1,5 +1,6 @@
 export interface InvoiceDataItem {
   id: string;
+  original_id: string;
   createdAt: Date;
   paymentDue: Date;
   description: string;

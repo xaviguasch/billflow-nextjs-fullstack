@@ -1,7 +1,13 @@
 import React from "react";
 import InvoicePreview from "./InvoicePreview";
 
-const InvoiceGroup = () => {
+import { type InvoiceDataItem } from "@/app/types";
+
+type InvoiceGroupProps = {
+  invoices: InvoiceDataItem[];
+};
+
+const InvoiceGroup = ({ invoices }: InvoiceGroupProps) => {
   return (
     <div>
       <div className="">
@@ -14,10 +20,9 @@ const InvoiceGroup = () => {
       <div>Invoices list</div>
 
       <div className="flex flex-col justify-start gap-y-4">
-        <InvoicePreview />
-        <InvoicePreview />
-        <InvoicePreview />
-        <InvoicePreview />
+        {invoices.map((invoice) => (
+          <InvoicePreview item={invoice} key={invoice.original_id} />
+        ))}
       </div>
     </div>
   );
