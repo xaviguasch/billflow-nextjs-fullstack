@@ -77,4 +77,4 @@ const InvoiceSchema = new Schema(
 
 const Invoice = models.Invoice || model("Invoice", InvoiceSchema);
 
-export default InvoiceSchema;
+export default Invoice;
