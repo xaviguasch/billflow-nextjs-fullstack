@@ -21,10 +21,6 @@ async function fetchInvoices() {
 const HomePage = async () => {
   const invoices = await fetchInvoices();
 
-  console.log("aaaaaaa");
-  console.log(invoices);
-  console.log("aaaaaaa");
-
   return (
     <main className="px-6 py-8">
       <InvoiceGroup invoices={invoices} />

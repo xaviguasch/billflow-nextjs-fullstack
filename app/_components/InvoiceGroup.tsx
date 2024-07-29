@@ -3,6 +3,7 @@ import InvoicePreview from "./InvoicePreview";
 
 import { type InvoiceDataItem } from "@/app/types";
 import NewButton from "./NewButton";
+import FilterSelect from "./FilterSelect";
 
 type InvoiceGroupProps = {
   invoices: InvoiceDataItem[];
@@ -17,8 +18,8 @@ const InvoiceGroup = ({ invoices }: InvoiceGroupProps) => {
           <p className="text-regent-gray text-xs">{invoices.length} invoices</p>
         </div>
 
-        <div>
-          <span>Filter</span>
+        <div className="flex flex-row items-center justify-start gap-[18px]">
+          <FilterSelect />
           <NewButton />
         </div>
       </div>
