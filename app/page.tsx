@@ -18,6 +18,8 @@ async function fetchInvoices() {
   }
 }
 
+export const revalidate = 3600;
+
 const HomePage = async () => {
   const invoices = await fetchInvoices();
 
