@@ -6,9 +6,10 @@ const FilterSelect = () => {
   const [status, setStatus] = useState("draft");
 
   return (
-    <div>
+    <div className="">
       <label htmlFor="status-filter"></label>
       <select
+        className="bg-white-lilac"
         name="status-filter"
         id="status-filter"
         value={status}

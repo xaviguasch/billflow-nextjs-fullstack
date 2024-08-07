@@ -2,9 +2,10 @@
 
 const NewInvoiceForm = () => {
   return (
-    <form action="">
+    <div className="py-6">
       <h2>New Invoice</h2>
-    </form>
+      <form action=""></form>
+    </div>
   );
 };
 
