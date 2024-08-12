@@ -1,6 +1,6 @@
 "use client";
 
-import DatePicker from "./DatePicker";
+import DatePickerInForm from "./DatePickerInForm";
 
 const NewInvoiceForm = () => {
   return (
@@ -66,8 +66,12 @@ const NewInvoiceForm = () => {
           />
         </div>
 
-        <div>
-          <DatePicker />
+        <div className="flex flex-col items-stretch justify-start space-y-2.5">
+          <label htmlFor="date" className="text-xs text-wild-blue-yonder">
+            Invoice Date
+          </label>
+
+          <DatePickerInForm />
         </div>
         <div></div>
       </form>
