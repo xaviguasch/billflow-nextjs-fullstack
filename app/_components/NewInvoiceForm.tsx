@@ -2,7 +2,7 @@
 
 import DatePickerInForm from "./DatePickerInForm";
 import SelectTerms from "./SelectTerms";
-import NewItem from "./NewItem";
+import ItemsList from "./ItemsList";
 
 const NewInvoiceForm = () => {
   return (
@@ -11,6 +11,7 @@ const NewInvoiceForm = () => {
       <form
         action=""
         className="flex flex-col items-stretch justify-start gap-y-10 py-6"
+        onSubmit={(e) => e.preventDefault()}
       >
         <div className="flex flex-col items-stretch justify-start gap-y-6">
           <span className="text-xs font-bold text-medium-slate-blue">
@@ -179,14 +180,7 @@ const NewInvoiceForm = () => {
             />
           </div>
         </div>
-
-        <div className="flex flex-col items-stretch justify-start gap-y-6">
-          <h3 className="text-steel text-lg font-bold tracking-wider">
-            Item List
-          </h3>
-
-          <NewItem />
-        </div>
+        <ItemsList />
       </form>
     </div>
   );
