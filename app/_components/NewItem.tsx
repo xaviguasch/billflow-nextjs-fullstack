@@ -1,6 +1,7 @@
 "use client";
 
 import { useId } from "react";
+import IconDeleteSVG from "./IconDeleteSVG";
 
 const NewItem = () => {
   const uniqueId = useId();
@@ -50,7 +51,7 @@ const NewItem = () => {
           />
         </div>
 
-        <div className="flex w-3/6 flex-col items-stretch justify-start space-y-2.5">
+        <div className="relative flex w-3/6 flex-col items-stretch justify-start space-y-2.5">
           <label
             htmlFor={`item-total-${uniqueId}`}
             className="text-xs text-wild-blue-yonder"
@@ -60,8 +61,11 @@ const NewItem = () => {
           <input
             type="number"
             id={`item-total-${uniqueId}`}
-            className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+            className="w-full rounded px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
           />
+          <div className="top- absolute right-2 top-[45%]">
+            <IconDeleteSVG />
+          </div>
         </div>
       </div>
     </div>
