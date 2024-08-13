@@ -13,14 +13,21 @@ const DatePickerInForm = () => {
 
   // const [selected, setSelected] = useState<Date>();
 
+  console.log(date);
+
   return (
-    <DatePicker
-      className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
-      id="date"
-      onChange={(date) => setStartDate(date)}
-      selected={date}
-      dateFormat="dd/MM/yyyy"
-    />
+    <div className="flex flex-col items-stretch justify-start space-y-2.5">
+      <label htmlFor="invoice-date" className="text-xs text-wild-blue-yonder">
+        Invoice Date
+      </label>
+      <DatePicker
+        className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+        id="invoice-date"
+        onChange={(date) => setStartDate(date)}
+        selected={date}
+        dateFormat="dd/MM/yyyy"
+      />
+    </div>
 
     // <div className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa">
     //   <DayPicker
