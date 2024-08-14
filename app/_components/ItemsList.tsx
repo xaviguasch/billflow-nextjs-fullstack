@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import NewItem from "./NewItem";
 import AddNewItemBtn from "./AddNewItemBtn";
+import FormSubmitButtons from "./FormSubmitButtons";
 
 const ItemsList = () => {
   const [items, setItems] = useState([
@@ -27,6 +28,8 @@ const ItemsList = () => {
       ))}
 
       <AddNewItemBtn addNewItem={addNewItem} />
+
+      <FormSubmitButtons />
     </div>
   );
 };

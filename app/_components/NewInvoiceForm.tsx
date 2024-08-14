@@ -6,7 +6,7 @@ import ItemsList from "./ItemsList";
 
 const NewInvoiceForm = () => {
   return (
-    <div className="flex flex-col items-stretch justify-start">
+    <div className="relative flex flex-col items-stretch justify-start">
       <h2 className="text-2xl font-bold tracking-wider">New Invoice</h2>
       <form
         action=""
