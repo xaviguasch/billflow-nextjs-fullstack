@@ -10,7 +10,7 @@ const NewInvoiceForm = () => {
       <h2 className="text-2xl font-bold tracking-wider">New Invoice</h2>
       <form
         action=""
-        className="flex flex-col items-stretch justify-start gap-y-10 py-6"
+        className="pt´p-6 flex flex-col items-stretch justify-start gap-y-10"
         onSubmit={(e) => e.preventDefault()}
       >
         <div className="flex flex-col items-stretch justify-start gap-y-6">

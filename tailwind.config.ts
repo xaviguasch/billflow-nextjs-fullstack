@@ -25,6 +25,7 @@ const config: Config = {
       "dark-orange": "#FF8F00",
       "bright-grey": "#373B53",
       steel: "#777F98",
+      alabaster: "#F9FAFE",
     },
 
     extend: {
