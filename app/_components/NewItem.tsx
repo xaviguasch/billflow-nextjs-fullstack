@@ -1,9 +1,14 @@
 "use client";
 
-import { useId } from "react";
+import { useId, useState } from "react";
 import IconDeleteSVG from "./IconDeleteSVG";
 
 const NewItem = ({ id }) => {
+  const [qty, setQty] = useState(0);
+  const [price, setPrice] = useState(0);
+
+  const total = qty * price;
+
   return (
     <div className="flex flex-col items-stretch justify-start space-y-6">
       <div className="flex flex-col items-stretch justify-start space-y-2.5">
@@ -16,6 +21,7 @@ const NewItem = ({ id }) => {
         <input
           type="text"
           id={`item-name${id}`}
+          name={`item-name${id}`}
           className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
         />
       </div>
@@ -31,7 +37,9 @@ const NewItem = ({ id }) => {
           <input
             type="number"
             id={`item-qty-${id}`}
-            className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+            value={qty}
+            onChange={(e) => setQty(e.target.value)}
+            className="w-full rounded border border-link-water px-4 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
           />
         </div>
 
@@ -45,7 +53,9 @@ const NewItem = ({ id }) => {
           <input
             type="number"
             id={`item-price-${id}`}
-            className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
           />
         </div>
 
@@ -56,11 +66,12 @@ const NewItem = ({ id }) => {
           >
             Total
           </label>
-          <input
-            type="number"
+          <span
             id={`item-total-${id}`}
             className="w-full rounded px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
-          />
+          >
+            {total}
+          </span>
           <div className="top- absolute right-2 top-[45%]">
             <IconDeleteSVG />
           </div>

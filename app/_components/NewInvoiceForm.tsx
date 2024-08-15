@@ -4,14 +4,16 @@ import DatePickerInForm from "./DatePickerInForm";
 import SelectTerms from "./SelectTerms";
 import ItemsList from "./ItemsList";
 
+import addInvoice from "@/app/actions/addInvoices";
+import FormSubmitButtons from "@/app/_components/FormSubmitButtons";
+
 const NewInvoiceForm = () => {
   return (
     <div className="relative flex flex-col items-stretch justify-start">
       <h2 className="text-2xl font-bold tracking-wider">New Invoice</h2>
       <form
-        action=""
+        action={addInvoice}
         className="pt´p-6 flex flex-col items-stretch justify-start gap-y-10"
-        onSubmit={(e) => e.preventDefault()}
       >
         <div className="flex flex-col items-stretch justify-start gap-y-6">
           <span className="text-xs font-bold text-medium-slate-blue">
@@ -28,6 +30,7 @@ const NewInvoiceForm = () => {
             <input
               type="text"
               id="street-address"
+              name="street-address"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
             />
           </div>
@@ -40,6 +43,7 @@ const NewInvoiceForm = () => {
               <input
                 type="text"
                 id="city"
+                name="city"
                 className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
               />
             </div>
@@ -181,6 +185,8 @@ const NewInvoiceForm = () => {
           </div>
         </div>
         <ItemsList />
+
+        <FormSubmitButtons />
       </form>
     </div>
   );

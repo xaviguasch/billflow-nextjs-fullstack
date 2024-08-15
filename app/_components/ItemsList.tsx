@@ -4,7 +4,6 @@ import { useState } from "react";
 
 import NewItem from "./NewItem";
 import AddNewItemBtn from "./AddNewItemBtn";
-import FormSubmitButtons from "./FormSubmitButtons";
 
 const ItemsList = () => {
   const [items, setItems] = useState([
@@ -22,14 +21,10 @@ const ItemsList = () => {
   return (
     <div className="flex flex-col items-stretch justify-start gap-y-6">
       <h3 className="text-steel text-lg font-bold tracking-wider">Item List</h3>
-
       {items.map((item) => (
         <NewItem id={item.id} key={item.id} />
       ))}
-
       <AddNewItemBtn addNewItem={addNewItem} />
-
-      <FormSubmitButtons />
     </div>
   );
 };
