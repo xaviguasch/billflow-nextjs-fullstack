@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import IconDeleteSVG from "./IconDeleteSVG";
 
-const NewItem = ({ id }) => {
+const NewItem = ({ id, name }) => {
   const [qty, setQty] = useState(0);
   const [price, setPrice] = useState(0);
 
@@ -37,6 +37,7 @@ const NewItem = ({ id }) => {
           <input
             type="number"
             id={`item-qty-${id}`}
+            name={`item-qty-${id}`}
             value={qty}
             onChange={(e) => setQty(e.target.value)}
             className="w-full rounded border border-link-water px-4 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
@@ -53,6 +54,7 @@ const NewItem = ({ id }) => {
           <input
             type="number"
             id={`item-price-${id}`}
+            name={`item-price-${id}`}
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"

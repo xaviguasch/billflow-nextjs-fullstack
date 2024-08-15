@@ -58,6 +58,7 @@ const NewInvoiceForm = () => {
               <input
                 type="text"
                 id="post-code"
+                name="post-code"
                 className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
               />
             </div>
@@ -70,6 +71,7 @@ const NewInvoiceForm = () => {
             <input
               type="text"
               id="country"
+              name="country"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
             />
           </div>
@@ -90,6 +92,7 @@ const NewInvoiceForm = () => {
             <input
               type="text"
               id="client-name"
+              name="client-name"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
             />
           </div>
@@ -104,6 +107,7 @@ const NewInvoiceForm = () => {
             <input
               type="email"
               id="client-email"
+              name="client-email"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
             />
           </div>
@@ -118,6 +122,7 @@ const NewInvoiceForm = () => {
             <input
               type="text"
               id="client-street-address"
+              name="client-street-address"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
             />
           </div>
@@ -162,6 +167,7 @@ const NewInvoiceForm = () => {
             <input
               type="text"
               id="client-country"
+              name="client-country"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
             />
           </div>
@@ -180,6 +186,7 @@ const NewInvoiceForm = () => {
             <input
               type="text"
               id="project-description"
+              name="project-description"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
             />
           </div>
