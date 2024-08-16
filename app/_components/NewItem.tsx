@@ -20,8 +20,8 @@ const NewItem = ({ id, name }) => {
         </label>
         <input
           type="text"
-          id={`item-name${id}`}
-          name={`item-name${id}`}
+          id={`item-name-${id}`}
+          name={`item-name-${id}`}
           className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
         />
       </div>
