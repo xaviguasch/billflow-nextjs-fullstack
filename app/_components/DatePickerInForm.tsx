@@ -23,6 +23,7 @@ const DatePickerInForm = () => {
       <DatePicker
         className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
         id="invoice-date"
+        name="invoice-date"
         onChange={(date) => setStartDate(date)}
         selected={date}
         dateFormat="dd/MM/yyyy"

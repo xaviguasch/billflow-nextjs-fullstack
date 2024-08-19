@@ -1,5 +1,10 @@
 "use server";
 
+import connectDB from "@/config/database";
+import Invoice from "@/models/Invoice";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
 function formDataToObject(formData) {
   const object = {};
 
@@ -8,11 +13,36 @@ function formDataToObject(formData) {
     object[key] = value;
   });
 
+  console.log("===========");
+  console.log(object);
+  console.log("===========");
+
   return object;
 }
 
 function transformToMongoDocument(inputObject) {
+  let dateString = inputObject["invoice-date"];
+  let [day, month, year] = dateString.split("/");
+  const dateObj = new Date(+year, +month - 1, +day);
+
+  console.log("===========");
+
+  console.log(inputObject["invoice-date"]);
+  console.log(dateObj);
+
+  console.log(dateObj.getTime());
+
+  console.log("===========");
+
+  let paymentDueDate = new Date(
+    dateObj.getTime() + inputObject["select-terms"] * 24 * 60 * 60 * 1000,
+  );
+
+  console.log("paymentDueDate:     ", paymentDueDate);
+
   const transformedDocument = {
+    original_id: "NEW",
+    paymentDue: paymentDueDate,
     client: {
       name: inputObject["client-name"],
       email: inputObject["client-email"],
@@ -66,19 +96,29 @@ function transformToMongoDocument(inputObject) {
   return transformedDocument;
 }
 
-const addInvoice = async (formData) => {
+async function addToDatabase(document) {
+  await connectDB();
+  console.log("!!!!!!!!!!!");
+  console.log(document);
+  console.log("!!!!!!!!!!!");
+
+  // const newInvoice = new Invoice(document);
+
+  // await newInvoice.save();
+
+  // revalidatePath("/", "layout");
+
+  // redirect("/");
+}
+
+async function addInvoice(formData) {
   console.log("hola from server action");
 
   const resultObj = formDataToObject(formData);
 
-  console.log("..................");
-  console.log(resultObj);
-  console.log("..................");
-
   const transformedDocument = transformToMongoDocument(resultObj);
-  console.log("!!!!!!!!!!!");
-  console.log(transformedDocument);
-  console.log("!!!!!!!!!!!");
-};
+
+  addToDatabase(transformedDocument);
+}
 
 export default addInvoice;

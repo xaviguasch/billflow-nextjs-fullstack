@@ -56,7 +56,7 @@ const NewInvoiceForm = () => {
                 Post Code
               </label>
               <input
-                type="text"
+                type="number"
                 id="post-code"
                 name="post-code"
                 className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
@@ -150,7 +150,7 @@ const NewInvoiceForm = () => {
                 Post Code
               </label>
               <input
-                type="text"
+                type="number"
                 id="client-post-code"
                 className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
               />
