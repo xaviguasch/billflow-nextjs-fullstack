@@ -43,21 +43,24 @@ function transformToMongoDocument(inputObject) {
   const transformedDocument = {
     original_id: "NEW",
     paymentDue: paymentDueDate,
-    client: {
-      name: inputObject["client-name"],
-      email: inputObject["client-email"],
-      address: {
-        street: inputObject["client-street-address"],
-        country: inputObject["client-country"],
-      },
+    paymentTerms: Number(inputObject["select-terms"]),
+    clientName: inputObject["client-name"],
+    clientEmail: inputObject["client-email"],
+
+    clientAddress: {
+      street: inputObject["client-street-address"],
+      city: inputObject["client-city"],
+      postCode: inputObject["client-post-code"],
+      country: inputObject["client-country"],
     },
-    projectDescription: inputObject["project-description"],
-    address: {
-      street: inputObject["street-address"],
-      city: inputObject.city,
-      postCode: inputObject["post-code"],
-      country: inputObject.country,
+    description: inputObject["project-description"],
+    senderAddress: {
+      street: inputObject["sender-street-address"],
+      city: inputObject["sender-city"],
+      postCode: inputObject["sender-post-code"],
+      country: inputObject["sender-country"],
     },
+    status: "pending",
     items: [],
   };
 
@@ -102,11 +105,11 @@ async function addToDatabase(document) {
   console.log(document);
   console.log("!!!!!!!!!!!");
 
-  // const newInvoice = new Invoice(document);
+  const newInvoice = new Invoice(document);
 
-  // await newInvoice.save();
+  await newInvoice.save();
 
-  // revalidatePath("/", "layout");
+  revalidatePath("/", "layout");
 
   // redirect("/");
 }

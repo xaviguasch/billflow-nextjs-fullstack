@@ -29,6 +29,10 @@ const InvoiceSchema = new Schema(
       type: String,
       required: [true, "Status is required"],
     },
+    description: {
+      type: String,
+      required: [true, "Project description is required"],
+    },
     senderAddress: {
       street: {
         type: String,
