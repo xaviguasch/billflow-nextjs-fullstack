@@ -108,10 +108,6 @@ async function addToDatabase(document) {
   const newInvoice = new Invoice(document);
 
   await newInvoice.save();
-
-  revalidatePath("/", "layout");
-
-  // redirect("/");
 }
 
 async function addInvoice(formData) {
@@ -122,6 +118,10 @@ async function addInvoice(formData) {
   const transformedDocument = transformToMongoDocument(resultObj);
 
   addToDatabase(transformedDocument);
+
+  revalidatePath("/", "layout");
+
+  redirect("/");
 }
 
 export default addInvoice;
