@@ -11,7 +11,7 @@ const HomePage = async () => {
 
   const invoices = await Invoice.find({}).lean();
 
-  console.log(invoices);
+  // console.log(invoices);
 
   return (
     <main className="px-6 py-8">

@@ -2,7 +2,7 @@
 
 const AddNewItemBtn = ({ addNewItem }) => {
   return (
-    <button onClick={addNewItem} className="mb-20">
+    <button onClick={addNewItem} className="mb-20" type="button">
       + Add New Item
     </button>
   );

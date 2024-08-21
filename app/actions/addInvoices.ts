@@ -13,10 +13,6 @@ function formDataToObject(formData) {
     object[key] = value;
   });
 
-  console.log("===========");
-  console.log(object);
-  console.log("===========");
-
   return object;
 }
 
@@ -24,15 +20,6 @@ function transformToMongoDocument(inputObject) {
   let dateString = inputObject["invoice-date"];
   let [day, month, year] = dateString.split("/");
   const dateObj = new Date(+year, +month - 1, +day);
-
-  console.log("===========");
-
-  console.log(inputObject["invoice-date"]);
-  console.log(dateObj);
-
-  console.log(dateObj.getTime());
-
-  console.log("===========");
 
   let paymentDueDate = new Date(
     dateObj.getTime() + inputObject["select-terms"] * 24 * 60 * 60 * 1000,
@@ -96,14 +83,19 @@ function transformToMongoDocument(inputObject) {
     }
   });
 
+  const totalAmount = transformedDocument.items.reduce((total, item) => {
+    console.log(item);
+
+    return total + item.quantity * item.price;
+  }, 0);
+
+  transformedDocument.total = totalAmount;
+
   return transformedDocument;
 }
 
 async function addToDatabase(document) {
   await connectDB();
-  console.log("!!!!!!!!!!!");
-  console.log(document);
-  console.log("!!!!!!!!!!!");
 
   const newInvoice = new Invoice(document);
 
@@ -116,6 +108,12 @@ async function addInvoice(formData) {
   const resultObj = formDataToObject(formData);
 
   const transformedDocument = transformToMongoDocument(resultObj);
+
+  console.log("!!!!!!!!!!!");
+
+  console.log(transformedDocument);
+
+  console.log("!!!!!!!!!!!");
 
   addToDatabase(transformedDocument);
 
