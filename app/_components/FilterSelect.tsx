@@ -1,9 +1,22 @@
 "use client";
 
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 
 const FilterSelect = () => {
   const [status, setStatus] = useState("draft");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const changeStatus = (value) => {
+    setStatus(value);
+
+    const params = new URLSearchParams(searchParams);
+
+    params.set("status", value);
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
 
   return (
     <div className="">
@@ -15,7 +28,8 @@ const FilterSelect = () => {
         value={status}
         onChange={(e) => {
           console.log(e.target.value);
-          setStatus(e.target.value);
+
+          changeStatus(e.target.value);
         }}
       >
         <option value="draft">Draft</option>
