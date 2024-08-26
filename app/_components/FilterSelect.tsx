@@ -15,6 +15,7 @@ const FilterSelect = () => {
     const params = new URLSearchParams(searchParams);
 
     params.set("status", value);
+
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
@@ -32,6 +33,7 @@ const FilterSelect = () => {
           changeStatus(e.target.value);
         }}
       >
+        <option value="all">All</option>
         <option value="draft">Draft</option>
         <option value="pending">Pending</option>
         <option value="paid">Paid</option>
