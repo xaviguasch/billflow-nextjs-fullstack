@@ -6,17 +6,16 @@ import Invoice from "@/models/Invoice";
 
 export const revalidate = 3600;
 
-const HomePage = async () => {
+const HomePage = async ({ searchParams }) => {
   connectDB();
 
   const invoices = await Invoice.find({}).lean();
 
-  console.log(invoices);
-  console.log("test!!!!!!");
+  const filter = searchParams?.status ?? "all";
 
   return (
     <main className="px-6 py-8">
-      <InvoiceGroup invoices={invoices} />
+      <InvoiceGroup invoices={invoices} filter={filter} />
     </main>
   );
 };
