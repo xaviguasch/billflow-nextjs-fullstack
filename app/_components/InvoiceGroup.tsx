@@ -1,4 +1,7 @@
 import React from "react";
+
+import Link from "next/link";
+
 import InvoicePreview from "./InvoicePreview";
 
 import { type InvoiceDataItem } from "@/app/types";
@@ -18,6 +21,10 @@ const InvoiceGroup = ({ invoices, filter }: InvoiceGroupProps) => {
     selectedInvoices = invoices;
   } else {
     selectedInvoices = invoices.filter((invoice) => invoice.status === filter);
+
+    console.log("----------");
+    console.log(selectedInvoices);
+    console.log("----------");
   }
 
   return (
@@ -36,7 +43,9 @@ const InvoiceGroup = ({ invoices, filter }: InvoiceGroupProps) => {
 
       <div className="flex flex-col justify-start gap-y-4">
         {selectedInvoices.map((invoice) => (
-          <InvoicePreview item={invoice} key={invoice.original_id} />
+          <Link href={`/invoice/${invoice._id}`} key={invoice._id}>
+            <InvoicePreview item={invoice} key={invoice.original_id} />
+          </Link>
         ))}
       </div>
     </div>
