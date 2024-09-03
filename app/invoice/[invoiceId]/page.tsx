@@ -122,8 +122,39 @@ const InvoicePage = async ({ params }) => {
                 {invoice.clientEmail}
               </p>
             </div>
-            <div></div>
-            <div></div>
+
+            <div className="rounded-lg bg-alabaster">
+              <div className="flex flex-col gap-y-6 p-6">
+                {invoice.items.map((item) => (
+                  <div
+                    key={item._id}
+                    className="flex flex-row items-center justify-between text-xs"
+                  >
+                    <div>
+                      <p className="text-cinder">{item.name}</p>
+                      <p className="text-wild-blue-yonder">
+                        {item.quantity} x €{item.price}
+                      </p>
+                    </div>
+                    <div className="">
+                      <p className="text-cinder">
+                        €{item.quantity * item.price}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="item flex flex-row items-center justify-between rounded-b-lg bg-bright-grey p-6 text-white">
+                <p className="text-[11px]">Grand Total</p>
+                <p className="text-xl font-bold">
+                  €
+                  {invoice.items.reduce(
+                    (acc, currV) => acc + currV.quantity * currV.price,
+                    0,
+                  )}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
