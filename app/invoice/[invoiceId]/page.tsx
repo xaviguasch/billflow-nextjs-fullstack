@@ -51,12 +51,6 @@ const InvoicePage = async ({ params }) => {
   return (
     <div>
       <div className="px-6 pt-8">
-        <p>This is the invoice page for id: {params.invoiceId}</p>
-        <p>{invoice.clientEmail}</p>
-        <p>{invoice.clientName}</p>
-        <p>{invoice.status}</p>
-        <p>{invoice.description}</p>
-
         <div>
           <button>Go Back</button>
         </div>
@@ -157,6 +151,17 @@ const InvoicePage = async ({ params }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="mt-14 flex grow flex-row items-center justify-stretch gap-x-2 bg-white p-6">
+        <button className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder">
+          Edit
+        </button>
+        <button className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white">
+          Delete
+        </button>
+        <button className="grow rounded-3xl bg-medium-slate-blue px-7 py-4 text-xs font-bold text-white">
+          Mark as paid
+        </button>
       </div>
     </div>
   );
