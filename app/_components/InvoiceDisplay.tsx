@@ -1,6 +1,7 @@
 "use client";
 
 import { parseISO, format } from "date-fns";
+import removeInvoice from "../actions/removeInvoice";
 
 const InvoiceDisplay = ({ invoice }) => {
   console.log("Invoice data:", invoice);
@@ -139,7 +140,10 @@ const InvoiceDisplay = ({ invoice }) => {
         <button className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder">
           Edit
         </button>
-        <button className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white">
+        <button
+          className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white"
+          onClick={() => removeInvoice(invoice._id)}
+        >
           Delete
         </button>
         <button className="grow rounded-3xl bg-medium-slate-blue px-7 py-4 text-xs font-bold text-white">
