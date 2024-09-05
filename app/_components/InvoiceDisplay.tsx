@@ -32,6 +32,16 @@ const InvoiceDisplay = ({ invoice }) => {
   const statusString =
     invoice.status[0].toUpperCase() + invoice.status.slice(1).toLowerCase();
 
+  const handleDeleteInvoice = async (id) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this invoice",
+    );
+
+    if (!confirmed) return;
+
+    await removeInvoice(id);
+  };
+
   return (
     <div>
       <div className="px-6 pt-8">
@@ -142,7 +152,7 @@ const InvoiceDisplay = ({ invoice }) => {
         </button>
         <button
           className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white"
-          onClick={() => removeInvoice(invoice._id)}
+          onClick={() => handleDeleteInvoice(invoice._id)}
         >
           Delete
         </button>
