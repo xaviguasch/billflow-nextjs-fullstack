@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     colors: {
       "medium-slate-blue": "#7C5DFA",
+      "medium-slate-blue-disabled": "#5B44B8",
       "purple-mimosa": "#9277FF",
       dark: "#1E2139",
       "ebony-clay": "#252945",

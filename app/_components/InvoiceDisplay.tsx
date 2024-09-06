@@ -1,10 +1,15 @@
 "use client";
 
 import { parseISO, format } from "date-fns";
-import removeInvoice from "../actions/removeInvoice";
+import removeInvoice from "@/app/actions/removeInvoice";
+import markInvoiceAsPaid from "@/app/actions/markInvoiceAsPaid";
 
 const InvoiceDisplay = ({ invoice }) => {
   console.log("Invoice data:", invoice);
+  console.log("=============");
+  console.log(invoice.status);
+
+  console.log("=============");
 
   // Define a function to safely format dates
   const formatDate = (dateValue) => {
@@ -40,6 +45,23 @@ const InvoiceDisplay = ({ invoice }) => {
     if (!confirmed) return;
 
     await removeInvoice(id);
+  };
+
+  const handleMarkAsPaidInvoice = async (id) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to mark this invoice as paid",
+    );
+
+    if (!confirmed) return;
+
+    try {
+      await markInvoiceAsPaid(id);
+    } catch (error) {
+      console.error("Detailed error in handleMarkAsPaidInvoice:", error);
+      alert(
+        "Failed to mark invoice as paid. Please check the console for details.",
+      );
+    }
   };
 
   return (
@@ -156,8 +178,16 @@ const InvoiceDisplay = ({ invoice }) => {
         >
           Delete
         </button>
-        <button className="grow rounded-3xl bg-medium-slate-blue px-7 py-4 text-xs font-bold text-white">
-          Mark as paid
+        <button
+          className={`grow rounded-3xl px-7 py-4 text-xs font-bold ${
+            invoice.status === "paid"
+              ? "bg-medium-slate-blue-disabled cursor-not-allowed"
+              : "bg-medium-slate-blue text-white"
+          }`}
+          onClick={() => handleMarkAsPaidInvoice(invoice._id)}
+          disabled={invoice.status === "paid"}
+        >
+          {invoice.status === "paid" ? "Paid" : "Mark as paid"}
         </button>
       </div>
     </div>
