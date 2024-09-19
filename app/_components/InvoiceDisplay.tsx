@@ -4,6 +4,8 @@ import { parseISO, format } from "date-fns";
 import removeInvoice from "@/app/actions/removeInvoice";
 import markInvoiceAsPaid from "@/app/actions/markInvoiceAsPaid";
 
+import Link from "next/link";
+
 const InvoiceDisplay = ({ invoice }) => {
   console.log("Invoice data:", invoice);
   console.log("=============");
@@ -169,9 +171,12 @@ const InvoiceDisplay = ({ invoice }) => {
         </div>
       </div>
       <div className="mt-14 flex grow flex-row items-center justify-stretch gap-x-2 bg-white p-6">
-        <button className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder">
+        <Link
+          className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder"
+          href={`/invoice/${invoice._id}/edit`}
+        >
           Edit
-        </button>
+        </Link>
         <button
           className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white"
           onClick={() => handleDeleteInvoice(invoice._id)}
