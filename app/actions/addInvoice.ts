@@ -104,6 +104,9 @@ async function addToDatabase(document) {
 
 async function addInvoice(formData) {
   console.log("hola from server action");
+  console.log("====================");
+  console.log(formData);
+  console.log("====================");
 
   const resultObj = formDataToObject(formData);
 

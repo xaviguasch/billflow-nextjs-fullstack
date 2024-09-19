@@ -1,11 +1,10 @@
 import DatePickerInForm from "@/app/_components/DatePickerInForm";
 import SelectTerms from "@/app/_components/SelectTerms";
 import ItemsList from "@/app/_components/ItemsList";
-import FormSubmitButtons from "@/app/_components/FormSubmitButtons";
+import FormEditSaveChanges from "@/app/_components/FormEditSaveChanges";
+import updateInvoice from "@/app/actions/updateInvoice";
 
 const InvoiceEditForm = ({ invoice }) => {
-  // NEED TO EDIT THIS COMPONENT
-
   return (
     <div className="relative flex flex-col items-stretch justify-start">
       <h2 className="text-2xl font-bold tracking-wider">
@@ -13,9 +12,10 @@ const InvoiceEditForm = ({ invoice }) => {
         {invoice.original_id}
       </h2>
       <form
-        // action={addInvoice}
-        className="flex flex-col items-stretch justify-start gap-y-10 py-6"
+        action={updateInvoice}
+        className="flex flex-col items-stretch justify-start gap-y-10"
       >
+        <input type="hidden" name="_id" value={invoice._id} />
         <div className="flex flex-col items-stretch justify-start gap-y-6">
           <span className="text-xs font-bold text-medium-slate-blue">
             Bill From
@@ -193,7 +193,7 @@ const InvoiceEditForm = ({ invoice }) => {
 
           <DatePickerInForm invoiceDate={invoice.paymentDue} />
 
-          <SelectTerms invoiceTerms={invoice.terms} />
+          <SelectTerms invoiceTerms={invoice.paymentTerms} />
 
           <div className="flex flex-col items-stretch justify-start space-y-2.5">
             <label
@@ -211,7 +211,9 @@ const InvoiceEditForm = ({ invoice }) => {
             />
           </div>
         </div>
-        {/* <ItemsList invoiceItems={invoice.items} /> */}
+        <ItemsList invoiceItems={invoice.items} />
+
+        <FormEditSaveChanges />
       </form>
     </div>
   );

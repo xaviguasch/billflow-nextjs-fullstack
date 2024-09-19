@@ -4,7 +4,7 @@ import DatePickerInForm from "./DatePickerInForm";
 import SelectTerms from "./SelectTerms";
 import ItemsList from "./ItemsList";
 
-import addInvoice from "@/app/actions/addInvoices";
+import addInvoice from "@/app/actions/addInvoice";
 import FormSubmitButtons from "@/app/_components/FormSubmitButtons";
 
 const NewInvoiceForm = () => {

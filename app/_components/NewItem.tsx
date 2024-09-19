@@ -3,9 +3,13 @@
 import { useId, useState } from "react";
 import IconDeleteSVG from "./IconDeleteSVG";
 
-const NewItem = ({ id, name }) => {
-  const [qty, setQty] = useState(0);
-  const [price, setPrice] = useState(0);
+const NewItem = ({ item }) => {
+  console.log("&&&&&&&&&&&&&&&&&&&&");
+  console.log(item);
+  console.log("&&&&&&&&&&&&&&&&&&&&");
+
+  const [qty, setQty] = useState(item.quantity || 0);
+  const [price, setPrice] = useState(item.price || 0);
 
   const total = qty * price;
 
@@ -13,31 +17,32 @@ const NewItem = ({ id, name }) => {
     <div className="flex flex-col items-stretch justify-start space-y-6">
       <div className="flex flex-col items-stretch justify-start space-y-2.5">
         <label
-          htmlFor={`item-name${id}`}
+          htmlFor={`item-name-${item._id}`}
           className="text-xs text-wild-blue-yonder"
         >
           Item Name
         </label>
         <input
           type="text"
-          id={`item-name-${id}`}
-          name={`item-name-${id}`}
+          id={`item-name-${item._id}`}
+          name={`item-name-${item._id}`}
           className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+          defaultValue={item.name}
         />
       </div>
 
       <div className="flex flex-row items-stretch justify-between space-x-6">
         <div className="flex w-1/6 flex-col items-stretch justify-start space-y-2.5">
           <label
-            htmlFor={`item-qty-${id}`}
+            htmlFor={`item-qty-${item._id}`}
             className="text-xs text-wild-blue-yonder"
           >
             Qty.
           </label>
           <input
             type="number"
-            id={`item-qty-${id}`}
-            name={`item-qty-${id}`}
+            id={`item-qty-${item._id}`}
+            name={`item-qty-${item._id}`}
             value={qty}
             onChange={(e) => setQty(e.target.value)}
             className="w-full rounded border border-link-water px-4 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
@@ -46,15 +51,15 @@ const NewItem = ({ id, name }) => {
 
         <div className="flex w-2/6 flex-col items-stretch justify-start space-y-2.5">
           <label
-            htmlFor={`item-price-${id}`}
+            htmlFor={`item-price-${item._id}`}
             className="text-xs text-wild-blue-yonder"
           >
             Price
           </label>
           <input
             type="number"
-            id={`item-price-${id}`}
-            name={`item-price-${id}`}
+            id={`item-price-${item._id}`}
+            name={`item-price-${item._id}`}
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
@@ -63,13 +68,13 @@ const NewItem = ({ id, name }) => {
 
         <div className="relative flex w-3/6 flex-col items-stretch justify-start space-y-2.5">
           <label
-            htmlFor={`item-total-${id}`}
+            htmlFor={`item-total-${item._id}`}
             className="text-xs text-wild-blue-yonder"
           >
             Total
           </label>
           <span
-            id={`item-total-${id}`}
+            id={`item-total-${item._id}`}
             className="w-full rounded px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
           >
             {total}
