@@ -1,18 +1,19 @@
-"use client";
-
-import DatePickerInForm from "./DatePickerInForm";
-import SelectTerms from "./SelectTerms";
-import ItemsList from "./ItemsList";
-
-import addInvoice from "@/app/actions/addInvoices";
+import DatePickerInForm from "@/app/_components/DatePickerInForm";
+import SelectTerms from "@/app/_components/SelectTerms";
+import ItemsList from "@/app/_components/ItemsList";
 import FormSubmitButtons from "@/app/_components/FormSubmitButtons";
 
-const NewInvoiceForm = () => {
+const InvoiceEditForm = ({ invoice }) => {
+  // NEED TO EDIT THIS COMPONENT
+
   return (
     <div className="relative flex flex-col items-stretch justify-start">
-      <h2 className="text-2xl font-bold tracking-wider">New Invoice</h2>
+      <h2 className="text-2xl font-bold tracking-wider">
+        Edit <span className="text-regent-gray">#</span>
+        {invoice.original_id}
+      </h2>
       <form
-        action={addInvoice}
+        // action={addInvoice}
         className="flex flex-col items-stretch justify-start gap-y-10 py-6"
       >
         <div className="flex flex-col items-stretch justify-start gap-y-6">
@@ -32,6 +33,7 @@ const NewInvoiceForm = () => {
               id="sender-street-address"
               name="sender-street-address"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+              defaultValue={invoice.senderAddress.street}
             />
           </div>
 
@@ -48,6 +50,7 @@ const NewInvoiceForm = () => {
                 id="sender-city"
                 name="sender-city"
                 className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+                defaultValue={invoice.senderAddress.city}
               />
             </div>
 
@@ -63,6 +66,7 @@ const NewInvoiceForm = () => {
                 id="sender-post-code"
                 name="sender-post-code"
                 className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+                defaultValue={invoice.senderAddress.postCode}
               />
             </div>
           </div>
@@ -79,6 +83,7 @@ const NewInvoiceForm = () => {
               id="sender-country"
               name="sender-country"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+              defaultValue={invoice.senderAddress.country}
             />
           </div>
         </div>
@@ -100,6 +105,7 @@ const NewInvoiceForm = () => {
               id="client-name"
               name="client-name"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+              defaultValue={invoice.clientName}
             />
           </div>
 
@@ -115,6 +121,7 @@ const NewInvoiceForm = () => {
               id="client-email"
               name="client-email"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+              defaultValue={invoice.clientEmail}
             />
           </div>
 
@@ -130,6 +137,7 @@ const NewInvoiceForm = () => {
               id="client-street-address"
               name="client-street-address"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+              defaultValue={invoice.clientAddress.street}
             />
           </div>
 
@@ -146,6 +154,7 @@ const NewInvoiceForm = () => {
                 id="client-city"
                 name="client-city"
                 className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+                defaultValue={invoice.clientAddress.city}
               />
             </div>
 
@@ -161,6 +170,7 @@ const NewInvoiceForm = () => {
                 id="client-post-code"
                 name="client-post-code"
                 className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+                defaultValue={invoice.clientAddress.postCode}
               />
             </div>
           </div>
@@ -177,12 +187,13 @@ const NewInvoiceForm = () => {
               id="client-country"
               name="client-country"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+              defaultValue={invoice.clientAddress.country}
             />
           </div>
 
-          <DatePickerInForm />
+          <DatePickerInForm invoiceDate={invoice.paymentDue} />
 
-          <SelectTerms />
+          <SelectTerms invoiceTerms={invoice.terms} />
 
           <div className="flex flex-col items-stretch justify-start space-y-2.5">
             <label
@@ -196,15 +207,14 @@ const NewInvoiceForm = () => {
               id="project-description"
               name="project-description"
               className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+              defaultValue={invoice.description}
             />
           </div>
         </div>
-        <ItemsList />
-
-        <FormSubmitButtons />
+        {/* <ItemsList invoiceItems={invoice.items} /> */}
       </form>
     </div>
   );
 };
 
-export default NewInvoiceForm;
+export default InvoiceEditForm;

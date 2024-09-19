@@ -8,12 +8,21 @@ import "react-datepicker/dist/react-datepicker.css";
 // import { DayPicker } from "react-day-picker";
 // import "react-day-picker/style.css";
 
-const DatePickerInForm = () => {
-  const [date, setStartDate] = useState(new Date());
+const DatePickerInForm = ({ invoiceDate }) => {
+  const [date, setStartDate] = useState(invoiceDate || new Date());
 
   // const [selected, setSelected] = useState<Date>();
+  console.log(".............");
+
+  console.log(invoiceDate);
+
+  console.log(".............");
+
+  console.log("==========");
 
   console.log(date);
+
+  console.log("==========");
 
   return (
     <div className="flex flex-col items-stretch justify-start space-y-2.5">
@@ -24,7 +33,9 @@ const DatePickerInForm = () => {
         className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
         id="invoice-date"
         name="invoice-date"
-        onChange={(date) => setStartDate(date)}
+        onChange={(date) => {
+          setStartDate(date);
+        }}
         selected={date}
         dateFormat="dd/MM/yyyy"
       />
