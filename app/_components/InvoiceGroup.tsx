@@ -32,7 +32,9 @@ const InvoiceGroup = ({ invoices, filter }: InvoiceGroupProps) => {
       <div className="flex flex-row justify-between">
         <div>
           <h2 className="text-xl">Invoices</h2>
-          <p className="text-xs text-regent-gray">{invoices.length} invoices</p>
+          <p className="text-xs text-regent-gray">
+            {selectedInvoices.length} invoices
+          </p>
         </div>
 
         <div className="flex flex-row items-center justify-start gap-[18px]">

@@ -34,7 +34,6 @@ const FilterSelect = () => {
         }}
       >
         <option value="all">All</option>
-        <option value="draft">Draft</option>
         <option value="pending">Pending</option>
         <option value="paid">Paid</option>
       </select>
