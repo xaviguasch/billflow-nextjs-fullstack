@@ -28,7 +28,7 @@ const InvoiceGroup = ({ invoices, filter }: InvoiceGroupProps) => {
   }
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 px-6 py-8">
       <div className="flex flex-row justify-between">
         <div>
           <h2 className="text-xl">Invoices</h2>

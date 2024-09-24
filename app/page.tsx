@@ -3,7 +3,7 @@ import InvoiceGroup from "./_components/InvoiceGroup";
 
 import connectDB from "@/config/database";
 import Invoice from "@/models/Invoice";
-
+import Header from "@/app/_components/Header";
 // With the use of 'searchParams' the page becomes dynamic
 // so we don't need revalidate anymore
 // export const revalidate = 3600;
@@ -16,7 +16,8 @@ const HomePage = async ({ searchParams }) => {
   const filter = searchParams?.status ?? "all";
 
   return (
-    <main className="px-6 py-8">
+    <main>
+      <Header />
       <InvoiceGroup invoices={invoices} filter={filter} />
     </main>
   );
