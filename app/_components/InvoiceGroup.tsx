@@ -21,10 +21,6 @@ const InvoiceGroup = ({ invoices, filter }: InvoiceGroupProps) => {
     selectedInvoices = invoices;
   } else {
     selectedInvoices = invoices.filter((invoice) => invoice.status === filter);
-
-    console.log("----------");
-    console.log(selectedInvoices);
-    console.log("----------");
   }
 
   return (

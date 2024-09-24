@@ -5,6 +5,19 @@ import Invoice from "@/models/Invoice";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
+// We're only gonna use this for aesthetic purposes, it'll take the place
+// of the "original_id" in the database documents
+function generateRandomId() {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const randomLetters =
+    letters.charAt(Math.floor(Math.random() * letters.length)) +
+    letters.charAt(Math.floor(Math.random() * letters.length));
+
+  const randomNumbers = Math.floor(1000 + Math.random() * 9000); // Ensures a 4-digit number
+
+  return randomLetters + randomNumbers;
+}
+
 function formDataToObject(formData) {
   const object = {};
 
@@ -28,7 +41,7 @@ function transformToMongoDocument(inputObject) {
   console.log("paymentDueDate:     ", paymentDueDate);
 
   const transformedDocument = {
-    original_id: "NEW",
+    original_id: generateRandomId(),
     paymentDue: paymentDueDate,
     paymentTerms: Number(inputObject["select-terms"]),
     clientName: inputObject["client-name"],

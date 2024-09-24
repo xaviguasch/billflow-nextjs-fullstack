@@ -16,7 +16,7 @@ const HomePage = async ({ searchParams }) => {
   const filter = searchParams?.status ?? "all";
 
   return (
-    <main>
+    <main className="mb-20">
       <Header />
       <InvoiceGroup invoices={invoices} filter={filter} />
     </main>
