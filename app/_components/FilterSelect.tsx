@@ -23,7 +23,7 @@ const FilterSelect = () => {
     <div className="">
       <label htmlFor="status-filter"></label>
       <select
-        className="bg-white-lilac"
+        className="cursor-pointer bg-white-lilac pr-3 text-right"
         name="status-filter"
         id="status-filter"
         value={status}
@@ -33,7 +33,7 @@ const FilterSelect = () => {
           changeStatus(e.target.value);
         }}
       >
-        <option value="all">All</option>
+        <option value="all">Filter: All</option>
         <option value="pending">Pending</option>
         <option value="paid">Paid</option>
       </select>

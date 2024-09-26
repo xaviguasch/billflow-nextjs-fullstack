@@ -15,7 +15,7 @@ const Header = () => {
           <IconMoonSVG />
         </div>
 
-        <div className="flex h-full flex-col items-center justify-center border-l border-wild-blue-yonder px-6">
+        <div className="border-mountain-mist flex h-full flex-col items-center justify-center border-l border-opacity-50 px-6">
           <Image
             src="/images/image-avatar.jpg"
             alt="Avatar"

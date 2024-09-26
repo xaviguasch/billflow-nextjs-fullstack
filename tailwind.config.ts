@@ -27,6 +27,7 @@ const config: Config = {
       "bright-grey": "#373B53",
       steel: "#777F98",
       alabaster: "#F9FAFE",
+      "mountain-mist": "#979797",
     },
 
     extend: {

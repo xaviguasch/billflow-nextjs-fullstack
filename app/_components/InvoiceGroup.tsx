@@ -10,7 +10,7 @@ import FilterSelect from "./FilterSelect";
 
 type InvoiceGroupProps = {
   invoices: InvoiceDataItem[];
-  filter: "all" | "draft" | "pending" | "paid";
+  filter: "all" | "pending" | "paid";
 };
 
 const InvoiceGroup = ({ invoices, filter }: InvoiceGroupProps) => {
