@@ -18,6 +18,7 @@ const HomePage = async ({ searchParams }) => {
   return (
     <main className="mb-20">
       <Header />
+
       <InvoiceGroup invoices={invoices} filter={filter} />
     </main>
   );

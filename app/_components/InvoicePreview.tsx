@@ -19,7 +19,7 @@ const InvoicePreview = ({ item }: InvoiceProps) => {
     item.status[0].toUpperCase() + item.status.slice(1).toLowerCase();
 
   return (
-    <div className="grid auto-rows-auto grid-cols-2 gap-y-6 rounded-lg border border-white bg-white p-6 text-xs font-medium text-wild-blue-yonder hover:border hover:border-medium-slate-blue">
+    <div className="grid auto-rows-auto grid-cols-2 gap-y-6 rounded-lg border border-white bg-white p-6 text-xs font-medium text-wild-blue-yonder hover:border hover:border-medium-slate-blue md:grid-cols-4 md:px-6 md:py-7">
       <p className="font-bold">
         #<span className="text-cinder">{item.original_id}</span>
       </p>
@@ -27,7 +27,7 @@ const InvoicePreview = ({ item }: InvoiceProps) => {
         <p className="">{item.clientName}</p>
       </div>
 
-      <div className="flex flex-col justify-between space-y-2">
+      <div className="flex flex-col justify-between space-y-2 md:flex-row">
         <p className="">{formattedDate}</p>
         <p className="text-base font-bold text-cinder">
           £{new Intl.NumberFormat("en-US").format(item.total)}

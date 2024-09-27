@@ -24,16 +24,16 @@ const InvoiceGroup = ({ invoices, filter }: InvoiceGroupProps) => {
   }
 
   return (
-    <div className="flex flex-col gap-8 px-6 py-8">
+    <div className="flex flex-col gap-8 px-6 py-8 md:px-12 md:py-14">
       <div className="flex flex-row justify-between">
         <div>
-          <h2 className="text-xl">Invoices</h2>
+          <h2 className="text-[20px] font-bold md:text-[32px]">Invoices</h2>
           <p className="text-xs text-regent-gray">
-            {selectedInvoices.length} invoices
+            {selectedInvoices.length} Invoices
           </p>
         </div>
 
-        <div className="flex flex-row items-center justify-start gap-[18px]">
+        <div className="flex flex-row items-center justify-start gap-[18px] md:gap-10">
           <FilterSelect />
           <NewButton />
         </div>
