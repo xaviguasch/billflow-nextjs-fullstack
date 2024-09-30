@@ -60,40 +60,43 @@ const InvoiceDisplay = ({ invoice }) => {
 
   return (
     <div>
-      <div className="flex flex-col justify-start gap-8 px-6 pt-8">
-        <div className="flex flex-row items-center gap-x-6">
+      <div className="flex flex-col justify-start gap-8 px-6 pt-8 md:px-10 md:pt-12">
+        <div className="flex flex-row items-center gap-x-6 md:gap-x-8">
           <IconArrowLeftSVG />
           <Link href="/" className="font-bold hover:text-wild-blue-yonder">
             Go Back
           </Link>
         </div>
 
-        <div className="flex flex-col items-stretch justify-start gap-4">
-          <div className="flex flex-row items-center justify-between rounded-lg bg-white px-6 py-6 text-xs">
+        <div className="flex flex-col items-stretch justify-start gap-4 md:gap-6">
+          <div className="flex flex-row items-center justify-between rounded-lg bg-white px-6 py-6 text-xs md:px-8 md:py-5">
             <span className="text-wild-blue-yonder">Status</span>
             <div
               className={`flex h-10 w-[104px] items-center justify-center space-x-2 self-center justify-self-end rounded-md font-bold ${invoice.status === "paid" && "bg-aqua-green/5 text-aqua-green"} ${invoice.status === "pending" && "bg-dark-orange/5 text-dark-orange"} ${invoice.status === "draft" && "bg-bright-grey/5 text-bright-grey"}`}
             >
               <span className="text-[32px]">·</span>
-              <p className="">{statusString}</p>
+              <p className="md:text-base">{statusString}</p>
             </div>
           </div>
-          <div className="flex flex-col justify-start gap-8 bg-white px-6 py-6 text-xs text-wild-blue-yonder">
-            <div>
-              <p>
-                #
-                <span className="font-bold text-cinder">
-                  {invoice.original_id}
-                </span>
-              </p>
-              <p className="">{invoice.description}</p>
-            </div>
 
-            <div className="text-[11px]">
-              <p>{invoice.senderAddress.street}</p>
-              <p>{invoice.senderAddress.city}</p>
-              <p>{invoice.senderAddress.postCode}</p>
-              <p>{invoice.senderAddress.country}</p>
+          <div className="flex flex-col justify-start gap-8 bg-white px-6 py-6 text-xs text-wild-blue-yonder md:rounded-lg md:p-8">
+            <div className="flex flex-col items-start justify-start gap-y-7">
+              <div>
+                <p>
+                  #
+                  <span className="font-bold text-cinder">
+                    {invoice.original_id}
+                  </span>
+                </p>
+                <p className="">{invoice.description}</p>
+              </div>
+
+              <div className="text-[11px]">
+                <p>{invoice.senderAddress.street}</p>
+                <p>{invoice.senderAddress.city}</p>
+                <p>{invoice.senderAddress.postCode}</p>
+                <p>{invoice.senderAddress.country}</p>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-y-3 text-xs">
@@ -165,6 +168,7 @@ const InvoiceDisplay = ({ invoice }) => {
           </div>
         </div>
       </div>
+
       <div className="mt-14 flex grow flex-row items-center justify-stretch gap-x-2 bg-white p-6">
         <Link
           className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder"
