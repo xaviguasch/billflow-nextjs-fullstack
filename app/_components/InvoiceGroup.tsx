@@ -29,7 +29,12 @@ const InvoiceGroup = ({ invoices, filter }: InvoiceGroupProps) => {
         <div>
           <h2 className="text-[20px] font-bold md:text-[32px]">Invoices</h2>
           <p className="text-xs text-regent-gray">
-            {selectedInvoices.length} Invoices
+            <span className="hidden md:block">
+              The are {selectedInvoices.length} selected invoices
+            </span>
+            <span className="text-xs md:hidden">
+              {selectedInvoices.length} Invoices
+            </span>
           </p>
         </div>
 
