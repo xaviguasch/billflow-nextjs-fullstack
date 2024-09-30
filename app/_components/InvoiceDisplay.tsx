@@ -79,8 +79,8 @@ const InvoiceDisplay = ({ invoice }) => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-start gap-8 bg-white px-6 py-6 text-xs text-wild-blue-yonder md:rounded-lg md:p-8">
-            <div className="flex flex-col items-start justify-start gap-y-7">
+          <div className="flex flex-col justify-start gap-8 bg-white px-6 py-6 text-xs text-wild-blue-yonder md:gap-0 md:rounded-lg md:p-8">
+            <div className="flex flex-col items-start justify-start gap-y-7 md:flex-row md:items-start md:justify-between md:gap-0">
               <div>
                 <p>
                   #
@@ -91,7 +91,7 @@ const InvoiceDisplay = ({ invoice }) => {
                 <p className="">{invoice.description}</p>
               </div>
 
-              <div className="text-[11px]">
+              <div className="text-[11px] md:text-right">
                 <p>{invoice.senderAddress.street}</p>
                 <p>{invoice.senderAddress.city}</p>
                 <p>{invoice.senderAddress.postCode}</p>
@@ -99,41 +99,44 @@ const InvoiceDisplay = ({ invoice }) => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-y-3 text-xs">
-              <div>
+            <div className="grid grid-cols-2 gap-y-3 text-xs md:mt-5 md:grid-cols-6">
+              <div className="md:col-start-1 md:col-end-2 md:grid-rows-2">
                 <p>Invoice Date</p>
                 <p className="mt-2 text-[15px] font-bold text-cinder">
                   {formatedInvoiceCreationDate}
                 </p>
               </div>
-              <div>
+
+              <div className="md:col-start-3 md:col-end-4">
                 <p>Bill To</p>
                 <p className="mt-2 text-[15px] font-bold text-cinder">
                   {invoice.clientName}
                 </p>
               </div>
-              <div className="self-end">
+
+              <div className="md:grid-row-start-2 md:grid-row-end-3 self-end md:col-start-1 md:col-end-2">
                 <p>Payment Due</p>
                 <p className="mt-2 text-[15px] font-bold text-cinder">
                   {formatedPaymentDueDate}
                 </p>
               </div>
-              <div className="self-end">
+
+              <div className="self-end md:col-start-3 md:col-end-4 md:row-start-2 md:row-end-3">
                 <p>{invoice.clientAddress.street}</p>
                 <p>{invoice.clientAddress.city}</p>
                 <p>{invoice.clientAddress.postCode}</p>
                 <p>{invoice.clientAddress.county}</p>
               </div>
+
+              <div className="mt-8 md:col-start-5 md:col-end-6 md:row-start-1 md:row-end-2 md:mt-0">
+                <p>Sent to</p>
+                <p className="mt-2 text-[15px] font-bold text-cinder">
+                  {invoice.clientEmail}
+                </p>
+              </div>
             </div>
 
-            <div>
-              <p>Sent to</p>
-              <p className="mt-2 text-[15px] font-bold text-cinder">
-                {invoice.clientEmail}
-              </p>
-            </div>
-
-            <div className="rounded-lg bg-alabaster">
+            <div className="mt-1 rounded-lg bg-alabaster md:mt-12">
               <div className="flex flex-col gap-y-6 p-6">
                 {invoice.items.map((item) => (
                   <div
