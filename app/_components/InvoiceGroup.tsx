@@ -14,8 +14,6 @@ type InvoiceGroupProps = {
 };
 
 const InvoiceGroup = ({ invoices, filter }: InvoiceGroupProps) => {
-  console.log(filter);
-
   let selectedInvoices;
   if (!filter || filter === "all") {
     selectedInvoices = invoices;

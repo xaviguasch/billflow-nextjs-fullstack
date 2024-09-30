@@ -5,6 +5,7 @@ import removeInvoice from "@/app/actions/removeInvoice";
 import markInvoiceAsPaid from "@/app/actions/markInvoiceAsPaid";
 
 import Link from "next/link";
+import IconArrowLeftSVG from "@/app/_components/IconArrowLeftSVG";
 
 const InvoiceDisplay = ({ invoice }) => {
   console.log("Invoice data:", invoice);
@@ -68,9 +69,12 @@ const InvoiceDisplay = ({ invoice }) => {
 
   return (
     <div>
-      <div className="px-6 pt-8">
-        <div>
-          <button>Go Back</button>
+      <div className="flex flex-col justify-start gap-8 px-6 pt-8">
+        <div className="flex flex-row items-center gap-x-6">
+          <IconArrowLeftSVG />
+          <Link href="/" className="font-bold hover:text-wild-blue-yonder">
+            Go Back
+          </Link>
         </div>
 
         <div className="flex flex-col items-stretch justify-start gap-4">
@@ -186,7 +190,7 @@ const InvoiceDisplay = ({ invoice }) => {
         <button
           className={`grow rounded-3xl px-7 py-4 text-xs font-bold ${
             invoice.status === "paid"
-              ? "bg-medium-slate-blue-disabled cursor-not-allowed"
+              ? "cursor-not-allowed bg-medium-slate-blue-disabled"
               : "bg-medium-slate-blue text-white"
           }`}
           onClick={() => handleMarkAsPaidInvoice(invoice._id)}
