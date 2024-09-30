@@ -8,25 +8,16 @@ import Link from "next/link";
 import IconArrowLeftSVG from "@/app/_components/IconArrowLeftSVG";
 
 const InvoiceDisplay = ({ invoice }) => {
-  console.log("Invoice data:", invoice);
-  console.log("=============");
-  console.log(invoice.status);
-
-  console.log("=============");
-
   // Define a function to safely format dates
   const formatDate = (dateValue) => {
     console.log("Formatting date:", dateValue);
     if (!dateValue || typeof dateValue !== "string") {
-      console.error("Invalid date value:", dateValue);
       return "Invalid Date";
     }
     try {
       const date = parseISO(dateValue);
-      console.log("Parsed date:", date);
       return format(date, "dd MMM yyyy");
     } catch (error) {
-      console.error("Error parsing date:", dateValue, error);
       return "Invalid Date";
     }
   };

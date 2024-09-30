@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
+import Header from "@/app/_components/Header";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${leagueSpartan.variable} bg-white-lilac font-sans`}>
+        <Header />
         {children}
       </body>
     </html>
