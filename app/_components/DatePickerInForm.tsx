@@ -30,7 +30,7 @@ const DatePickerInForm = ({ invoiceDate }) => {
         Invoice Date
       </label>
       <DatePicker
-        className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+        className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
         id="invoice-date"
         name="invoice-date"
         onChange={(date) => {

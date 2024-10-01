@@ -9,6 +9,10 @@ import Invoice from "@/models/Invoice";
 
 const HomePage = async ({ searchParams }) => {
   connectDB();
+  console.log("..........");
+
+  console.log(searchParams);
+  console.log("..........");
 
   const invoices = await Invoice.find({}).lean();
 

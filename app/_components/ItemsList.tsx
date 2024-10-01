@@ -28,7 +28,7 @@ const ItemsList = ({ invoiceItems }) => {
   };
 
   return (
-    <div className="flex flex-col items-stretch justify-start gap-y-6">
+    <div className="flex flex-col items-stretch justify-start gap-y-6 px-6 md:px-14">
       <h3 className="text-lg font-bold tracking-wider text-steel">Item List</h3>
       {items.map((item) => (
         <NewItem key={item._id} item={item} />

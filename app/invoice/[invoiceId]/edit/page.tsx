@@ -4,7 +4,9 @@ import Invoice from "@/models/Invoice";
 import findInvoice from "@/app/actions/findInvoice";
 
 const InvoiceEditPage = async ({ params }) => {
+  console.log("============");
   console.log(params);
+  console.log("============");
 
   const invoice = await findInvoice(params.invoiceId);
 
@@ -15,7 +17,7 @@ const InvoiceEditPage = async ({ params }) => {
   console.log("invoice: ", invoice);
 
   return (
-    <div className="bg-white px-6 pt-8">
+    <div className="bg-white pt-8 md:pt-14">
       <InvoiceEditForm invoice={invoice} />
     </div>
   );

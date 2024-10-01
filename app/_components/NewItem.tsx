@@ -26,7 +26,7 @@ const NewItem = ({ item }) => {
           type="text"
           id={`item-name-${item._id}`}
           name={`item-name-${item._id}`}
-          className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+          className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
           defaultValue={item.name}
         />
       </div>
@@ -45,7 +45,7 @@ const NewItem = ({ item }) => {
             name={`item-qty-${item._id}`}
             value={qty}
             onChange={(e) => setQty(e.target.value)}
-            className="w-full rounded border border-link-water px-4 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="w-full rounded border border-link-water px-4 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa md:text-base [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
           />
         </div>
 
@@ -62,7 +62,7 @@ const NewItem = ({ item }) => {
             name={`item-price-${item._id}`}
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa md:text-base [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
           />
         </div>
 
@@ -75,7 +75,7 @@ const NewItem = ({ item }) => {
           </label>
           <span
             id={`item-total-${item._id}`}
-            className="w-full rounded px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa"
+            className="w-full rounded px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
           >
             {total}
           </span>

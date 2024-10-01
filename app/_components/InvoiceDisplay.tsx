@@ -82,13 +82,13 @@ const InvoiceDisplay = ({ invoice }) => {
 
             <div className="hidden md:block md:flex md:flex-row md:items-center md:justify-start md:gap-2">
               <Link
-                className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder"
+                className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder hover:bg-link-water"
                 href={`/invoice/${invoice._id}/edit`}
               >
                 Edit
               </Link>
               <button
-                className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white"
+                className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white hover:bg-light-salmon-pink"
                 onClick={() => handleDeleteInvoice(invoice._id)}
               >
                 Delete
@@ -96,8 +96,8 @@ const InvoiceDisplay = ({ invoice }) => {
               <button
                 className={`grow rounded-3xl px-7 py-4 text-xs font-bold ${
                   invoice.status === "paid"
-                    ? "cursor-not-allowed bg-medium-slate-blue-disabled"
-                    : "bg-medium-slate-blue text-white"
+                    ? "cursor-not-allowed bg-medium-slate-blue-disabled text-white"
+                    : "bg-medium-slate-blue text-white hover:bg-purple-mimosa"
                 }`}
                 onClick={() => handleMarkAsPaidInvoice(invoice._id)}
                 disabled={invoice.status === "paid"}
@@ -230,13 +230,13 @@ const InvoiceDisplay = ({ invoice }) => {
 
       <div className="mt-14 flex grow flex-row items-center justify-stretch gap-x-2 bg-white p-6 md:hidden">
         <Link
-          className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder"
+          className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder hover:bg-link-water"
           href={`/invoice/${invoice._id}/edit`}
         >
           Edit
         </Link>
         <button
-          className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white"
+          className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white hover:bg-light-salmon-pink"
           onClick={() => handleDeleteInvoice(invoice._id)}
         >
           Delete
@@ -244,8 +244,8 @@ const InvoiceDisplay = ({ invoice }) => {
         <button
           className={`grow rounded-3xl px-7 py-4 text-xs font-bold ${
             invoice.status === "paid"
-              ? "cursor-not-allowed bg-medium-slate-blue-disabled"
-              : "bg-medium-slate-blue text-white"
+              ? "cursor-not-allowed bg-medium-slate-blue-disabled text-white"
+              : "bg-medium-slate-blue text-white hover:bg-purple-mimosa"
           }`}
           onClick={() => handleMarkAsPaidInvoice(invoice._id)}
           disabled={invoice.status === "paid"}
