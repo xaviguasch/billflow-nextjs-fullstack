@@ -60,7 +60,7 @@ const InvoiceDisplay = ({ invoice }) => {
 
   return (
     <div>
-      <div className="flex flex-col justify-start gap-8 px-6 pt-8 md:px-10 md:pt-12">
+      <div className="flex flex-col justify-start gap-8 px-6 pt-8 md:px-10 md:pb-32 md:pt-12">
         <div className="flex flex-row items-center gap-x-6 md:gap-x-8">
           <IconArrowLeftSVG />
           <Link href="/" className="font-bold hover:text-wild-blue-yonder">
@@ -69,13 +69,41 @@ const InvoiceDisplay = ({ invoice }) => {
         </div>
 
         <div className="flex flex-col items-stretch justify-start gap-4 md:gap-6">
-          <div className="flex flex-row items-center justify-between rounded-lg bg-white px-6 py-6 text-xs md:px-8 md:py-5">
-            <span className="text-wild-blue-yonder">Status</span>
-            <div
-              className={`flex h-10 w-[104px] items-center justify-center space-x-2 self-center justify-self-end rounded-md font-bold ${invoice.status === "paid" && "bg-aqua-green/5 text-aqua-green"} ${invoice.status === "pending" && "bg-dark-orange/5 text-dark-orange"} ${invoice.status === "draft" && "bg-bright-grey/5 text-bright-grey"}`}
-            >
-              <span className="text-[32px]">·</span>
-              <p className="md:text-base">{statusString}</p>
+          <div className="rounded-lg bg-white px-6 py-6 text-xs md:flex md:flex-row md:justify-between md:px-8 md:py-5 md:align-middle">
+            <div className="flex flex-row items-center justify-between md:justify-start md:gap-5">
+              <span className="text-wild-blue-yonder">Status</span>
+              <div
+                className={`flex h-10 w-[104px] items-center justify-center space-x-2 self-center justify-self-end rounded-md font-bold ${invoice.status === "paid" && "bg-aqua-green/5 text-aqua-green"} ${invoice.status === "pending" && "bg-dark-orange/5 text-dark-orange"} ${invoice.status === "draft" && "bg-bright-grey/5 text-bright-grey"}`}
+              >
+                <span className="text-[32px]">·</span>
+                <p className="md:text-base">{statusString}</p>
+              </div>
+            </div>
+
+            <div className="hidden md:block md:flex md:flex-row md:items-center md:justify-start md:gap-2">
+              <Link
+                className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder"
+                href={`/invoice/${invoice._id}/edit`}
+              >
+                Edit
+              </Link>
+              <button
+                className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white"
+                onClick={() => handleDeleteInvoice(invoice._id)}
+              >
+                Delete
+              </button>
+              <button
+                className={`grow rounded-3xl px-7 py-4 text-xs font-bold ${
+                  invoice.status === "paid"
+                    ? "cursor-not-allowed bg-medium-slate-blue-disabled"
+                    : "bg-medium-slate-blue text-white"
+                }`}
+                onClick={() => handleMarkAsPaidInvoice(invoice._id)}
+                disabled={invoice.status === "paid"}
+              >
+                {invoice.status === "paid" ? "Paid" : "Mark as paid"}
+              </button>
             </div>
           </div>
 
@@ -99,7 +127,7 @@ const InvoiceDisplay = ({ invoice }) => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-y-3 text-xs md:mt-5 md:grid-cols-6">
+            <div className="grid grid-cols-2 gap-y-3 text-xs md:mt-5 md:grid-cols-6 md:grid-rows-2">
               <div className="md:col-start-1 md:col-end-2 md:grid-rows-2">
                 <p>Invoice Date</p>
                 <p className="mt-2 text-[15px] font-bold text-cinder">
@@ -137,34 +165,62 @@ const InvoiceDisplay = ({ invoice }) => {
             </div>
 
             <div className="mt-1 rounded-lg bg-alabaster md:mt-12">
-              <div className="flex flex-col gap-y-6 p-6">
+              <div className="mb-10 flex flex-col gap-y-6 p-6 md:mb-0 md:p-8 md:pb-9">
+                <div className="hidden text-wild-blue-yonder md:grid md:grid-cols-5">
+                  <span className="col-span-2">Item Name</span>
+                  <span className="justify-self-end">QTY.</span>
+                  <span className="justify-self-end">Price</span>
+                  <span className="justify-self-end">Total</span>
+                </div>
+
                 {invoice.items.map((item) => (
                   <div
                     key={item._id}
-                    className="flex flex-row items-center justify-between text-xs"
+                    className="flex flex-row items-center justify-between text-xs md:grid md:grid-cols-5 md:text-base md:font-bold"
                   >
-                    <div>
-                      <p className="text-cinder">{item.name}</p>
-                      <p className="text-wild-blue-yonder">
+                    <div className="md:col-start-1 md:col-end-2">
+                      <p className="text-cinder md:text-base md:font-bold">
+                        {item.name}
+                      </p>
+                      <p className="text-wild-blue-yonder md:hidden">
                         {item.quantity} x €{item.price}
                       </p>
                     </div>
-                    <div className="">
-                      <p className="text-cinder">
+                    <div className="md:col-start-3 md:col-end-4 md:justify-self-end">
+                      <p className="text-cinder md:hidden">
                         €{item.quantity * item.price}
                       </p>
+                      <span className="hidden text-wild-blue-yonder md:block">
+                        {item.quantity}
+                      </span>
+                    </div>
+
+                    <div className="hidden md:col-start-4 md:col-end-5 md:block md:justify-self-end">
+                      <span className="text-wild-blue-yonder">
+                        € {item.price.toFixed(2)}
+                      </span>
+                    </div>
+
+                    <div className="hidden md:col-start-5 md:col-end-6 md:block md:justify-self-end">
+                      <span className="text-cinder">
+                        € {(item.quantity * item.price).toFixed(2)}
+                      </span>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="item flex flex-row items-center justify-between rounded-b-lg bg-bright-grey p-6 text-white">
-                <p className="text-[11px]">Grand Total</p>
-                <p className="text-xl font-bold">
-                  €
-                  {invoice.items.reduce(
-                    (acc, currV) => acc + currV.quantity * currV.price,
-                    0,
-                  )}
+
+              <div className="item flex flex-row items-center justify-between rounded-b-lg bg-bright-grey p-6 text-white md:px-8 md:py-6">
+                <p className="text-[11px] md:hidden">Grand Total</p>
+                <p className="hidden text-xs md:block">Amount Due</p>
+                <p className="text-xl font-bold md:text-2xl">
+                  €{" "}
+                  {invoice.items
+                    .reduce(
+                      (acc, currV) => acc + currV.quantity * currV.price,
+                      0,
+                    )
+                    .toFixed(2)}
                 </p>
               </div>
             </div>
@@ -172,7 +228,7 @@ const InvoiceDisplay = ({ invoice }) => {
         </div>
       </div>
 
-      <div className="mt-14 flex grow flex-row items-center justify-stretch gap-x-2 bg-white p-6">
+      <div className="mt-14 flex grow flex-row items-center justify-stretch gap-x-2 bg-white p-6 md:hidden">
         <Link
           className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder"
           href={`/invoice/${invoice._id}/edit`}
