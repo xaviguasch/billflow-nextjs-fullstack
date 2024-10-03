@@ -25,8 +25,11 @@ const DatePickerInForm = ({ invoiceDate }) => {
   console.log("==========");
 
   return (
-    <div className="flex flex-col items-stretch justify-start space-y-2.5">
-      <label htmlFor="invoice-date" className="text-xs text-wild-blue-yonder">
+    <div className="flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-2">
+      <label
+        htmlFor="invoice-date"
+        className="w-full text-xs text-wild-blue-yonder"
+      >
         Invoice Date
       </label>
       <DatePicker

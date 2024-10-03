@@ -24,30 +24,31 @@ const InvoiceEditForm = ({ invoice }) => {
           action={updateInvoice}
           className="flex flex-col items-stretch justify-start gap-y-10"
         >
-          <input type="hidden" name="_id" value={invoice._id} />
-          <div className="flex flex-col items-stretch justify-start gap-y-6 px-6 md:px-14">
-            <span className="text-xs font-bold text-medium-slate-blue md:text-base">
-              Bill From
-            </span>
+          <div className="px-6 md:px-14">
+            <input type="hidden" name="_id" value={invoice._id} />
 
-            <div className="flex flex-col items-stretch justify-start space-y-2.5">
-              <label
-                htmlFor="sender-street-address"
-                className="text-xs text-wild-blue-yonder"
-              >
-                Street Address
-              </label>
-              <input
-                type="text"
-                id="sender-street-address"
-                name="sender-street-address"
-                className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
-                defaultValue={invoice.senderAddress.street}
-              />
-            </div>
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
+              <span className="col-span-2 text-xs font-bold text-medium-slate-blue md:col-start-1 md:col-end-4 md:text-base">
+                Bill From
+              </span>
 
-            <div className="flex flex-row items-stretch justify-between space-x-6">
-              <div className="flex flex-col items-stretch justify-start space-y-2.5">
+              <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-4">
+                <label
+                  htmlFor="sender-street-address"
+                  className="text-xs text-wild-blue-yonder"
+                >
+                  Street Address
+                </label>
+                <input
+                  type="text"
+                  id="sender-street-address"
+                  name="sender-street-address"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  defaultValue={invoice.senderAddress.street}
+                />
+              </div>
+
+              <div className="col-start-1 col-end-2 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-2">
                 <label
                   htmlFor="sender-city"
                   className="text-xs text-wild-blue-yonder"
@@ -63,7 +64,7 @@ const InvoiceEditForm = ({ invoice }) => {
                 />
               </div>
 
-              <div className="flex flex-col items-stretch justify-start space-y-2.5">
+              <div className="col-start-2 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-2 md:col-end-3">
                 <label
                   htmlFor="sender-post-code"
                   className="text-xs text-wild-blue-yonder"
@@ -78,80 +79,78 @@ const InvoiceEditForm = ({ invoice }) => {
                   defaultValue={invoice.senderAddress.postCode}
                 />
               </div>
+
+              <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-3 md:col-end-3">
+                <label
+                  htmlFor="sender-country"
+                  className="text-xs text-wild-blue-yonder"
+                >
+                  Country
+                </label>
+                <input
+                  type="text"
+                  id="sender-country"
+                  name="sender-country"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  defaultValue={invoice.senderAddress.country}
+                />
+              </div>
             </div>
 
-            <div className="flex flex-col items-stretch justify-start space-y-2.5">
-              <label
-                htmlFor="sender-country"
-                className="text-xs text-wild-blue-yonder"
-              >
-                Country
-              </label>
-              <input
-                type="text"
-                id="sender-country"
-                name="sender-country"
-                className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
-                defaultValue={invoice.senderAddress.country}
-              />
-            </div>
-          </div>
+            <div className="mt-10 grid grid-cols-2 gap-6 md:mt-12 md:grid-cols-3">
+              <span className="col-start-1 col-end-3 text-xs font-bold text-medium-slate-blue md:col-start-1 md:col-end-4 md:text-base">
+                Bill To
+              </span>
 
-          <div className="flex flex-col items-stretch justify-start gap-y-6 px-6 md:px-14">
-            <span className="text-xs font-bold text-medium-slate-blue md:text-base">
-              Bill To
-            </span>
+              <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-4">
+                <label
+                  htmlFor="client-name"
+                  className="text-xs text-wild-blue-yonder"
+                >
+                  Client's Name
+                </label>
+                <input
+                  type="text"
+                  id="client-name"
+                  name="client-name"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  defaultValue={invoice.clientName}
+                />
+              </div>
 
-            <div className="flex flex-col items-stretch justify-start space-y-2.5">
-              <label
-                htmlFor="client-name"
-                className="text-xs text-wild-blue-yonder"
-              >
-                Client's Name
-              </label>
-              <input
-                type="text"
-                id="client-name"
-                name="client-name"
-                className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
-                defaultValue={invoice.clientName}
-              />
-            </div>
+              <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-4">
+                <label
+                  htmlFor="client-email"
+                  className="text-xs text-wild-blue-yonder"
+                >
+                  Client's Email
+                </label>
+                <input
+                  type="email"
+                  id="client-email"
+                  name="client-email"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  defaultValue={invoice.clientEmail}
+                />
+              </div>
 
-            <div className="flex flex-col items-stretch justify-start space-y-2.5">
-              <label
-                htmlFor="client-email"
-                className="text-xs text-wild-blue-yonder"
-              >
-                Client's Email
-              </label>
-              <input
-                type="email"
-                id="client-email"
-                name="client-email"
-                className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
-                defaultValue={invoice.clientEmail}
-              />
-            </div>
+              <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-4">
+                <label
+                  htmlFor="client-street-address"
+                  className="text-xs text-wild-blue-yonder"
+                >
+                  Street Address
+                </label>
+                <input
+                  type="text"
+                  id="client-street-address"
+                  name="client-street-address"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  defaultValue={invoice.clientAddress.street}
+                />
+              </div>
 
-            <div className="flex flex-col items-stretch justify-start space-y-2.5">
-              <label
-                htmlFor="client-street-address"
-                className="text-xs text-wild-blue-yonder"
-              >
-                Street Address
-              </label>
-              <input
-                type="text"
-                id="client-street-address"
-                name="client-street-address"
-                className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
-                defaultValue={invoice.clientAddress.street}
-              />
-            </div>
-
-            <div className="flex flex-row items-stretch justify-between space-x-6">
-              <div className="flex flex-col items-stretch justify-start space-y-2.5">
+              <div className="col-start-1 col-end-2 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-2">
                 <label
                   htmlFor="client-city"
                   className="text-xs text-wild-blue-yonder"
@@ -167,7 +166,7 @@ const InvoiceEditForm = ({ invoice }) => {
                 />
               </div>
 
-              <div className="flex flex-col items-stretch justify-start space-y-2.5">
+              <div className="col-start-2 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-2 md:col-end-3">
                 <label
                   htmlFor="client-post-code"
                   className="text-xs text-wild-blue-yonder"
@@ -182,45 +181,50 @@ const InvoiceEditForm = ({ invoice }) => {
                   defaultValue={invoice.clientAddress.postCode}
                 />
               </div>
+
+              <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-3 md:col-end-4">
+                <label
+                  htmlFor="client-country"
+                  className="text-xs text-wild-blue-yonder"
+                >
+                  Country
+                </label>
+                <input
+                  type="text"
+                  id="client-country"
+                  name="client-country"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  defaultValue={invoice.clientAddress.country}
+                />
+              </div>
             </div>
 
-            <div className="flex flex-col items-stretch justify-start space-y-2.5">
-              <label
-                htmlFor="client-country"
-                className="text-xs text-wild-blue-yonder"
-              >
-                Country
-              </label>
-              <input
-                type="text"
-                id="client-country"
-                name="client-country"
-                className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
-                defaultValue={invoice.clientAddress.country}
-              />
+            <div className="mt-10 grid grid-cols-1 gap-6 md:mt-12 md:grid-cols-2">
+              <DatePickerInForm invoiceDate={invoice.paymentDue} />
+
+              <SelectTerms invoiceTerms={invoice.paymentTerms} />
+
+              <div className="flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-3">
+                <label
+                  htmlFor="project-description"
+                  className="text-xs text-wild-blue-yonder"
+                >
+                  Project Description
+                </label>
+                <input
+                  type="text"
+                  id="project-description"
+                  name="project-description"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  defaultValue={invoice.description}
+                />
+              </div>
             </div>
 
-            <DatePickerInForm invoiceDate={invoice.paymentDue} />
-
-            <SelectTerms invoiceTerms={invoice.paymentTerms} />
-
-            <div className="flex flex-col items-stretch justify-start space-y-2.5">
-              <label
-                htmlFor="project-description"
-                className="text-xs text-wild-blue-yonder"
-              >
-                Project Description
-              </label>
-              <input
-                type="text"
-                id="project-description"
-                name="project-description"
-                className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
-                defaultValue={invoice.description}
-              />
+            <div className="mt-10 grid grid-cols-1 gap-6 md:mt-7">
+              <ItemsList invoiceItems={invoice.items} />
             </div>
           </div>
-          <ItemsList invoiceItems={invoice.items} />
 
           <FormEditSaveChanges />
         </form>
