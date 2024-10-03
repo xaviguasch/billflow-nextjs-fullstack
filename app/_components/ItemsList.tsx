@@ -28,8 +28,10 @@ const ItemsList = ({ invoiceItems }) => {
   };
 
   return (
-    <div className="flex flex-col items-stretch justify-start gap-y-6 md:gap-y-4">
-      <h3 className="text-lg font-bold tracking-wider text-steel">Item List</h3>
+    <div className="grid grid-cols-1 gap-y-6 md:gap-y-4">
+      <h3 className="col-start-1 col-end-2 text-lg font-bold tracking-wider text-steel">
+        Item List
+      </h3>
       {items.map((item) => (
         <NewItem key={item._id} item={item} />
       ))}

@@ -14,7 +14,7 @@ const NewItem = ({ item }) => {
   const total = qty * price;
 
   return (
-    <div className="grid grid-cols-[2fr_3fr_2fr_1fr] gap-x-4 gap-y-6 md:grid-cols-[5fr_1fr_2fr_2fr_1fr] md:gap-y-4">
+    <div className="col-start-1 col-end-2 grid grid-cols-[2fr_3fr_2fr_1fr] gap-x-4 gap-y-6 md:grid-cols-[5fr_1fr_2fr_2fr_1fr] md:gap-y-4">
       <div className="hidden text-xs text-wild-blue-yonder md:col-start-1 md:col-end-6 md:grid md:grid-cols-[5fr_1fr_2fr_2fr_1fr] md:gap-x-4">
         <span className="md:col-start-1 md:col-end-2">Item Name</span>
         <span className="md:col-start-2 md:col-end-3">Qty.</span>
