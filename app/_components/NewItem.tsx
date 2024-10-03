@@ -14,18 +14,18 @@ const NewItem = ({ item }) => {
   const total = qty * price;
 
   return (
-    <div className="grid grid-cols-[2fr_3fr_2fr_1fr] gap-x-4 gap-y-6">
-      <div className="hidden">
-        <span>Item Name</span>
-        <span>Qty.</span>
-        <span>Price</span>
-        <span>Total</span>
+    <div className="grid grid-cols-[2fr_3fr_2fr_1fr] gap-x-4 gap-y-6 md:grid-cols-[5fr_1fr_2fr_2fr_1fr] md:gap-y-4">
+      <div className="hidden text-xs text-wild-blue-yonder md:col-start-1 md:col-end-6 md:grid md:grid-cols-[5fr_1fr_2fr_2fr_1fr] md:gap-x-4">
+        <span className="md:col-start-1 md:col-end-2">Item Name</span>
+        <span className="md:col-start-2 md:col-end-3">Qty.</span>
+        <span className="md:col-start-3 md:col-end-4">Price</span>
+        <span className="md:col-start-4 md:col-end-5">Total</span>
       </div>
 
-      <div className="col-start-1 col-end-5 flex flex-col items-stretch justify-start space-y-2.5">
+      <div className="col-start-1 col-end-5 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-2 md:space-y-0">
         <label
           htmlFor={`item-name-${item._id}`}
-          className="text-xs text-wild-blue-yonder"
+          className="text-xs text-wild-blue-yonder md:hidden"
         >
           Item Name
         </label>
@@ -38,10 +38,10 @@ const NewItem = ({ item }) => {
         />
       </div>
 
-      <div className="col-start-1 col-end-2 flex flex-col items-stretch justify-start space-y-2.5">
+      <div className="col-start-1 col-end-2 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-2 md:col-end-3 md:space-y-0">
         <label
           htmlFor={`item-qty-${item._id}`}
-          className="text-xs text-wild-blue-yonder"
+          className="text-xs text-wild-blue-yonder md:hidden"
         >
           Qty.
         </label>
@@ -55,10 +55,10 @@ const NewItem = ({ item }) => {
         />
       </div>
 
-      <div className="col-start-2 col-end-3 flex flex-col items-stretch justify-start space-y-2.5">
+      <div className="col-start-2 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-3 md:col-end-4 md:space-y-0">
         <label
           htmlFor={`item-price-${item._id}`}
-          className="text-xs text-wild-blue-yonder"
+          className="text-xs text-wild-blue-yonder md:hidden"
         >
           Price
         </label>
@@ -72,22 +72,22 @@ const NewItem = ({ item }) => {
         />
       </div>
 
-      <div className="relative col-start-3 col-end-4 flex w-3/6 flex-col items-stretch justify-start space-y-2.5">
+      <div className="relative col-start-3 col-end-4 flex w-3/6 flex-col items-stretch justify-start space-y-2.5 md:col-start-4 md:col-end-5 md:space-y-0">
         <label
           htmlFor={`item-total-${item._id}`}
-          className="text-xs text-wild-blue-yonder"
+          className="text-xs text-wild-blue-yonder md:hidden"
         >
           Total
         </label>
         <span
           id={`item-total-${item._id}`}
-          className="w-full rounded py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+          className="md: w-full rounded py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
         >
           {total}
         </span>
       </div>
 
-      <div className="col-start-4 col-end-5 flex items-center justify-center pt-3">
+      <div className="col-start-4 col-end-5 flex items-center justify-center pt-3 md:col-start-5 md:col-end-6 md:-mt-2 md:pt-0">
         <IconDeleteSVG />
       </div>
     </div>
