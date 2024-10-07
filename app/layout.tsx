@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/_components/Header";
+import { Providers } from "./providers";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -20,10 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${leagueSpartan.variable} bg-white-lilac font-sans`}>
-        <Header />
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );

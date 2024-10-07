@@ -1,5 +1,5 @@
 import IconLogoSVG from "./IconLogoSVG";
-import IconMoonSVG from "./IconMoonSVG";
+import ThemeSwitch from "./ThemeSwitch";
 
 import Image from "next/image";
 
@@ -11,8 +11,8 @@ const Header = () => {
       </div>
 
       <div className="flex h-full items-center justify-start">
-        <div className="flex h-full flex-col items-center justify-center px-6 md:px-8">
-          <IconMoonSVG />
+        <div className="flex h-full flex-col items-center justify-center bg-valentine-red px-6 md:px-8">
+          <ThemeSwitch />
         </div>
 
         <div className="flex h-full flex-col items-center justify-center border-l border-mountain-mist border-opacity-50 px-6 md:px-8">
