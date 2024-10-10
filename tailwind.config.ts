@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     colors: {
+      text: {
+        primary: "var(--color-text-primary)",
+      },
       "medium-slate-blue": "#7C5DFA",
       "medium-slate-blue-disabled": "#5B44B8",
       "purple-mimosa": "#9277FF",

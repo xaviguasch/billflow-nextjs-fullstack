@@ -26,11 +26,11 @@ const InvoiceGroup = ({ invoices, filter }: InvoiceGroupProps) => {
       <div className="flex flex-row justify-between">
         <div>
           <h2 className="text-[20px] font-bold md:text-[32px]">Invoices</h2>
-          <p className="text-xs text-regent-gray">
+          <p className="text-xs text-regent-gray dark:text-link-water">
             <span className="hidden md:block">
               The are {selectedInvoices.length} selected invoices
             </span>
-            <span className="text-xs md:hidden">
+            <span className="text-xs md:hidden dark:text-link-water">
               {selectedInvoices.length} Invoices
             </span>
           </p>

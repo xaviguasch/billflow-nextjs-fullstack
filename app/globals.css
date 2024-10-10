@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 :root {
+  --color-text-primary: #000000;
+}
+
+.dark {
+  --color-text-primary: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {

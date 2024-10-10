@@ -22,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${leagueSpartan.variable} bg-white-lilac font-sans`}>
+      <body
+        className={`${leagueSpartan.variable} text-text-primary bg-white-lilac font-sans dark:bg-mirage`}
+      >
         <Providers>
           <Header />
           {children}

@@ -23,17 +23,17 @@ const InvoicePreview = ({ item }: InvoiceProps) => {
 
   return (
     <div
-      className={`grid auto-rows-auto grid-cols-2 rounded-lg border border-white bg-white p-6 text-xs font-medium text-wild-blue-yonder hover:border hover:border-medium-slate-blue md:grid-cols-5 md:items-center md:px-6 md:py-4 ${hoverShadowClass}`}
+      className={`grid auto-rows-auto grid-cols-2 rounded-lg border border-white bg-white p-6 text-xs font-medium text-wild-blue-yonder hover:border hover:border-medium-slate-blue md:grid-cols-5 md:items-center md:px-6 md:py-4 dark:border-dark dark:bg-dark dark:text-white ${hoverShadowClass}`}
     >
       <p className="pb-6 font-bold md:pb-0">
-        #<span className="text-cinder">{item.original_id}</span>
+        #<span className="text-cinder dark:text-white">{item.original_id}</span>
       </p>
 
       <div className="flex items-center justify-self-end pb-6 md:col-start-3 md:col-end-4 md:justify-self-start md:pb-0">
         <p className=" ">{item.clientName}</p>
       </div>
 
-      <p className="row-start-2 row-end-3 md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-1">
+      <p className="row-start-2 row-end-3 md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-1 dark:text-link-water">
         {formattedDate}
       </p>
 
@@ -45,7 +45,7 @@ const InvoicePreview = ({ item }: InvoiceProps) => {
         <p className="">{statusString}</p>
       </div>
 
-      <p className="row-start-3 row-end-4 mt-2 text-base font-bold text-cinder md:col-start-4 md:col-end-5 md:row-start-1 md:row-end-1 md:mr-4 md:mt-0 md:justify-self-end">
+      <p className="row-start-3 row-end-4 mt-2 text-base font-bold text-cinder md:col-start-4 md:col-end-5 md:row-start-1 md:row-end-1 md:mr-4 md:mt-0 md:justify-self-end dark:text-white">
         £{new Intl.NumberFormat("en-US").format(item.total)}
       </p>
     </div>

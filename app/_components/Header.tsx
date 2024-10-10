@@ -5,13 +5,13 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="flex h-[72px] items-center justify-between bg-bright-grey md:h-[80px]">
+    <div className="flex h-[72px] items-center justify-between bg-bright-grey md:h-[80px] dark:bg-dark">
       <div className="item flex h-full flex-col items-center justify-center rounded-r-3xl bg-medium-slate-blue px-6">
         <IconLogoSVG />
       </div>
 
       <div className="flex h-full items-center justify-start">
-        <div className="flex h-full flex-col items-center justify-center bg-valentine-red px-6 md:px-8">
+        <div className="flex h-full flex-col items-center justify-center px-6 md:px-8">
           <ThemeSwitch />
         </div>
 

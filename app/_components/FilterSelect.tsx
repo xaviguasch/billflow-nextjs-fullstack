@@ -23,7 +23,7 @@ const FilterSelect = () => {
     <div className="">
       <label htmlFor="status-filter"></label>
       <select
-        className="cursor-pointer bg-white-lilac pr-3 text-right text-xs"
+        className="bg-transparent cursor-pointer pr-3 text-right text-xs"
         name="status-filter"
         id="status-filter"
         value={status}
