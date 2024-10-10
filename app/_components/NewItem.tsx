@@ -25,7 +25,7 @@ const NewItem = ({ item }) => {
       <div className="col-start-1 col-end-5 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-2 md:space-y-0">
         <label
           htmlFor={`item-name-${item._id}`}
-          className="text-xs text-wild-blue-yonder md:hidden"
+          className="text-xs text-wild-blue-yonder md:hidden dark:text-regent-gray"
         >
           Item Name
         </label>
@@ -33,7 +33,7 @@ const NewItem = ({ item }) => {
           type="text"
           id={`item-name-${item._id}`}
           name={`item-name-${item._id}`}
-          className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+          className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
           defaultValue={item.name}
         />
       </div>
@@ -41,7 +41,7 @@ const NewItem = ({ item }) => {
       <div className="col-start-1 col-end-2 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-2 md:col-end-3 md:space-y-0">
         <label
           htmlFor={`item-qty-${item._id}`}
-          className="text-xs text-wild-blue-yonder md:hidden"
+          className="text-xs text-wild-blue-yonder md:hidden dark:text-regent-gray"
         >
           Qty.
         </label>
@@ -51,14 +51,14 @@ const NewItem = ({ item }) => {
           name={`item-qty-${item._id}`}
           value={qty}
           onChange={(e) => setQty(e.target.value)}
-          className="w-full rounded border border-link-water px-4 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa md:text-base [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          className="w-full rounded border border-link-water px-4 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         />
       </div>
 
       <div className="col-start-2 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-3 md:col-end-4 md:space-y-0">
         <label
           htmlFor={`item-price-${item._id}`}
-          className="text-xs text-wild-blue-yonder md:hidden"
+          className="text-xs text-wild-blue-yonder md:hidden dark:text-regent-gray"
         >
           Price
         </label>
@@ -68,20 +68,20 @@ const NewItem = ({ item }) => {
           name={`item-price-${item._id}`}
           value={price}
           onChange={(e) => setPrice(e.target.value)}
-          className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa md:text-base [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         />
       </div>
 
       <div className="relative col-start-3 col-end-4 flex w-3/6 flex-col items-stretch justify-start space-y-2.5 md:col-start-4 md:col-end-5 md:space-y-0">
         <label
           htmlFor={`item-total-${item._id}`}
-          className="text-xs text-wild-blue-yonder md:hidden"
+          className="text-xs text-wild-blue-yonder md:hidden dark:text-regent-gray"
         >
           Total
         </label>
         <span
           id={`item-total-${item._id}`}
-          className="md: w-full rounded py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+          className="md: w-full rounded py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:text-regent-gray"
         >
           {total}
         </span>

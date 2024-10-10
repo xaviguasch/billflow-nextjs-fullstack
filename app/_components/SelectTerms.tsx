@@ -9,7 +9,7 @@ const SelectTerms = ({ invoiceTerms }) => {
       <select
         id="select-terms"
         name="select-terms"
-        className="w-full rounded border border-link-water px-5 py-[15px] text-xs font-bold focus:border-purple-mimosa md:py-[17px] md:text-base"
+        className="w-full rounded border border-link-water px-5 py-[15px] text-xs font-bold focus:border-purple-mimosa md:py-[17px] md:text-base dark:border-dark dark:bg-dark"
         defaultValue={invoiceTerms}
       >
         <option value="1">Next 1 Day</option>

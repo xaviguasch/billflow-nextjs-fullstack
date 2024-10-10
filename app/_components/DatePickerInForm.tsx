@@ -28,12 +28,12 @@ const DatePickerInForm = ({ invoiceDate }) => {
     <div className="flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-2">
       <label
         htmlFor="invoice-date"
-        className="w-full text-xs text-wild-blue-yonder"
+        className="w-full text-xs text-wild-blue-yonder dark:text-regent-gray"
       >
         Invoice Date
       </label>
       <DatePicker
-        className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+        className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
         id="invoice-date"
         name="invoice-date"
         onChange={(date) => {

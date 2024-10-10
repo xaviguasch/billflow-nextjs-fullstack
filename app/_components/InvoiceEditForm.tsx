@@ -35,7 +35,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-4">
                 <label
                   htmlFor="sender-street-address"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   Street Address
                 </label>
@@ -43,7 +43,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="sender-street-address"
                   name="sender-street-address"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.senderAddress.street}
                 />
               </div>
@@ -51,7 +51,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="col-start-1 col-end-2 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-2">
                 <label
                   htmlFor="sender-city"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   City
                 </label>
@@ -59,7 +59,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="sender-city"
                   name="sender-city"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.senderAddress.city}
                 />
               </div>
@@ -67,7 +67,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="col-start-2 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-2 md:col-end-3">
                 <label
                   htmlFor="sender-post-code"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   Post Code
                 </label>
@@ -75,7 +75,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="sender-post-code"
                   name="sender-post-code"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.senderAddress.postCode}
                 />
               </div>
@@ -83,7 +83,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-3 md:col-end-3">
                 <label
                   htmlFor="sender-country"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   Country
                 </label>
@@ -91,7 +91,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="sender-country"
                   name="sender-country"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.senderAddress.country}
                 />
               </div>
@@ -105,7 +105,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-4">
                 <label
                   htmlFor="client-name"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   Client's Name
                 </label>
@@ -113,7 +113,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="client-name"
                   name="client-name"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.clientName}
                 />
               </div>
@@ -121,7 +121,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-4">
                 <label
                   htmlFor="client-email"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   Client's Email
                 </label>
@@ -129,7 +129,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="email"
                   id="client-email"
                   name="client-email"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.clientEmail}
                 />
               </div>
@@ -137,7 +137,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-4">
                 <label
                   htmlFor="client-street-address"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   Street Address
                 </label>
@@ -145,7 +145,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="client-street-address"
                   name="client-street-address"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.clientAddress.street}
                 />
               </div>
@@ -153,7 +153,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="col-start-1 col-end-2 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-2">
                 <label
                   htmlFor="client-city"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   City
                 </label>
@@ -161,7 +161,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="client-city"
                   name="client-city"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.clientAddress.city}
                 />
               </div>
@@ -169,7 +169,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="col-start-2 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-2 md:col-end-3">
                 <label
                   htmlFor="client-post-code"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   Post Code
                 </label>
@@ -177,7 +177,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="client-post-code"
                   name="client-post-code"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.clientAddress.postCode}
                 />
               </div>
@@ -185,7 +185,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="col-start-1 col-end-3 flex flex-col items-stretch justify-start space-y-2.5 md:col-start-3 md:col-end-4">
                 <label
                   htmlFor="client-country"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   Country
                 </label>
@@ -193,7 +193,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="client-country"
                   name="client-country"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.clientAddress.country}
                 />
               </div>
@@ -207,7 +207,7 @@ const InvoiceEditForm = ({ invoice }) => {
               <div className="flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-3">
                 <label
                   htmlFor="project-description"
-                  className="text-xs text-wild-blue-yonder"
+                  className="text-xs text-wild-blue-yonder dark:text-regent-gray"
                 >
                   Project Description
                 </label>
@@ -215,7 +215,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="project-description"
                   name="project-description"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
                   defaultValue={invoice.description}
                 />
               </div>
