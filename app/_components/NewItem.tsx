@@ -29,7 +29,7 @@ const NewItem = ({ item }) => {
           type="text"
           id={`item-name-${item._id}`}
           name={`item-name-${item._id}`}
-          className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+          className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark"
           defaultValue={item.name}
         />
       </div>
@@ -47,7 +47,7 @@ const NewItem = ({ item }) => {
           name={`item-qty-${item._id}`}
           value={qty}
           onChange={(e) => setQty(e.target.value)}
-          className="w-full rounded border border-link-water px-4 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          className="w-full rounded border border-link-water px-4 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         />
       </div>
 
@@ -64,7 +64,7 @@ const NewItem = ({ item }) => {
           name={`item-price-${item._id}`}
           value={price}
           onChange={(e) => setPrice(e.target.value)}
-          className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold [appearance:textfield] focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold [appearance:textfield] focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         />
       </div>
 
@@ -84,6 +84,7 @@ const NewItem = ({ item }) => {
       </div>
 
       <div className="col-start-4 col-end-5 flex items-center justify-center pt-3 md:col-start-5 md:col-end-6 md:-mt-2 md:pt-0">
+        {/* Functionality pending to implement, just found out!!! */}
         <IconDeleteSVG />
       </div>
     </div>

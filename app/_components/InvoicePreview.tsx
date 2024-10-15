@@ -23,7 +23,7 @@ const InvoicePreview = ({ item }: InvoiceProps) => {
 
   return (
     <div
-      className={`grid auto-rows-auto grid-cols-2 rounded-lg border border-white bg-white p-6 text-xs font-medium text-wild-blue-yonder hover:border hover:border-medium-slate-blue md:grid-cols-5 md:items-center md:px-6 md:py-4 dark:border-dark dark:bg-dark dark:text-white ${hoverShadowClass}`}
+      className={`grid auto-rows-auto grid-cols-2 rounded-lg border border-white bg-white p-6 text-xs font-medium text-wild-blue-yonder hover:border hover:border-medium-slate-blue md:grid-cols-5 md:items-center md:px-6 md:py-4 dark:border-dark dark:bg-dark dark:text-white dark:hover:border-medium-slate-blue ${hoverShadowClass} transition-[border-color] duration-300 ease-in-out`}
     >
       <p className="pb-6 font-bold md:pb-0">
         #<span className="text-cinder dark:text-white">{item.original_id}</span>

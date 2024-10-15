@@ -7,7 +7,7 @@ import Link from "next/link";
 const NewButton = () => {
   return (
     <Link
-      className="flex w-[90px] flex-row items-center justify-start gap-2 rounded-3xl bg-medium-slate-blue p-[6px] hover:bg-purple-mimosa md:w-full md:gap-0"
+      className="flex w-[90px] flex-row items-center justify-start gap-2 rounded-3xl bg-medium-slate-blue p-[6px] transition-colors duration-300 ease-in-out hover:bg-purple-mimosa md:w-full md:gap-0"
       href="/new"
     >
       <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white">

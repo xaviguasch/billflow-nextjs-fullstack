@@ -29,7 +29,7 @@ const ItemsList = ({ invoiceItems }) => {
 
   return (
     <div className="grid grid-cols-1 gap-y-6 md:gap-y-4">
-      <h3 className="col-start-1 col-end-2 text-lg font-bold tracking-wider text-steel">
+      <h3 className="col-start-1 col-end-2 text-lg font-bold tracking-wider text-steel focus-visible:border-purple-mimosa focus-visible:outline-none dark:focus-visible:border-medium-slate-blue">
         Item List
       </h3>
       {items.map((item) => (

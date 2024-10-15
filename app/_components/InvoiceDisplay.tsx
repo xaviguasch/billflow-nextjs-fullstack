@@ -235,19 +235,19 @@ const InvoiceDisplay = ({ invoice }) => {
 
       <div className="mt-14 flex grow flex-row items-center justify-stretch gap-x-2 bg-white p-6 md:hidden dark:bg-dark">
         <Link
-          className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder hover:bg-link-water dark:bg-ebony-clay dark:text-link-water"
+          className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder transition-colors duration-300 ease-in-out hover:bg-link-water dark:bg-ebony-clay dark:text-link-water"
           href={`/invoice/${invoice._id}/edit`}
         >
           Edit
         </Link>
         <button
-          className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white hover:bg-light-salmon-pink"
+          className="rounded-3xl bg-valentine-red px-6 py-4 text-xs font-bold text-white transition-colors duration-300 ease-in-out hover:bg-light-salmon-pink"
           onClick={() => handleDeleteInvoice(invoice._id)}
         >
           Delete
         </button>
         <button
-          className={`grow rounded-3xl px-7 py-4 text-xs font-bold ${
+          className={`grow rounded-3xl px-7 py-4 text-xs font-bold transition-colors duration-300 ease-in-out ${
             invoice.status === "paid"
               ? "cursor-not-allowed bg-medium-slate-blue-disabled text-white"
               : "bg-medium-slate-blue text-white hover:bg-purple-mimosa"

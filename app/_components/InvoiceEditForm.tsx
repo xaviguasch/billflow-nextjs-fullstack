@@ -43,7 +43,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="sender-street-address"
                   name="sender-street-address"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.senderAddress.street}
                 />
               </div>
@@ -59,7 +59,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="sender-city"
                   name="sender-city"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.senderAddress.city}
                 />
               </div>
@@ -75,7 +75,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="sender-post-code"
                   name="sender-post-code"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.senderAddress.postCode}
                 />
               </div>
@@ -91,7 +91,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="sender-country"
                   name="sender-country"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.senderAddress.country}
                 />
               </div>
@@ -113,7 +113,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="client-name"
                   name="client-name"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.clientName}
                 />
               </div>
@@ -129,7 +129,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="email"
                   id="client-email"
                   name="client-email"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.clientEmail}
                 />
               </div>
@@ -145,7 +145,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="client-street-address"
                   name="client-street-address"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.clientAddress.street}
                 />
               </div>
@@ -161,7 +161,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="client-city"
                   name="client-city"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.clientAddress.city}
                 />
               </div>
@@ -177,7 +177,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="client-post-code"
                   name="client-post-code"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.clientAddress.postCode}
                 />
               </div>
@@ -193,7 +193,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="client-country"
                   name="client-country"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.clientAddress.country}
                 />
               </div>
@@ -215,7 +215,7 @@ const InvoiceEditForm = ({ invoice }) => {
                   type="text"
                   id="project-description"
                   name="project-description"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
                   defaultValue={invoice.description}
                 />
               </div>
