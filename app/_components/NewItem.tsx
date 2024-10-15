@@ -4,10 +4,6 @@ import { useId, useState } from "react";
 import IconDeleteSVG from "./IconDeleteSVG";
 
 const NewItem = ({ item }) => {
-  console.log("&&&&&&&&&&&&&&&&&&&&");
-  console.log(item);
-  console.log("&&&&&&&&&&&&&&&&&&&&");
-
   const [qty, setQty] = useState(item.quantity || 0);
   const [price, setPrice] = useState(item.price || 0);
 

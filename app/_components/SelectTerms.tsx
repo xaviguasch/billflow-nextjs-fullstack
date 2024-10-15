@@ -2,7 +2,10 @@ const SelectTerms = ({ invoiceTerms }) => {
   console.log("invoiceTerms: ", invoiceTerms);
   return (
     <div className="flex flex-col items-stretch justify-start space-y-2.5 md:col-start-2 md:col-end-3">
-      <label htmlFor="select-terms" className="text-xs text-wild-blue-yonder">
+      <label
+        htmlFor="select-terms"
+        className="text-xs text-wild-blue-yonder dark:text-regent-gray"
+      >
         Payment Terms
       </label>
 
