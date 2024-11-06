@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const NewInvoiceForm = () => {
   return (
-    <div className="relative flex flex-col items-stretch justify-start gap-6">
+    <div className="relative flex flex-col items-stretch justify-start gap-6 md:mx-auto md:max-w-[730px] md:pt-14 lg:px-0 lg:py-20">
       <div className="flex flex-row items-center gap-x-6 px-6 md:gap-x-8 md:px-14">
         <IconArrowLeftSVG />
         <Link href="/" className="font-bold hover:text-wild-blue-yonder">
@@ -45,7 +45,7 @@ const NewInvoiceForm = () => {
                   type="text"
                   id="sender-street-address"
                   name="sender-street-address"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
 
@@ -60,7 +60,7 @@ const NewInvoiceForm = () => {
                   type="text"
                   id="sender-city"
                   name="sender-city"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
 
@@ -75,7 +75,7 @@ const NewInvoiceForm = () => {
                   type="text"
                   id="sender-post-code"
                   name="sender-post-code"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
 
@@ -90,7 +90,7 @@ const NewInvoiceForm = () => {
                   type="text"
                   id="sender-country"
                   name="sender-country"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
             </div>
@@ -111,7 +111,7 @@ const NewInvoiceForm = () => {
                   type="text"
                   id="client-name"
                   name="client-name"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
 
@@ -126,7 +126,7 @@ const NewInvoiceForm = () => {
                   type="email"
                   id="client-email"
                   name="client-email"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
 
@@ -141,7 +141,7 @@ const NewInvoiceForm = () => {
                   type="text"
                   id="client-street-address"
                   name="client-street-address"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
 
@@ -156,7 +156,7 @@ const NewInvoiceForm = () => {
                   type="text"
                   id="client-city"
                   name="client-city"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
 
@@ -171,7 +171,7 @@ const NewInvoiceForm = () => {
                   type="text"
                   id="client-post-code"
                   name="client-post-code"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
 
@@ -186,7 +186,7 @@ const NewInvoiceForm = () => {
                   type="text"
                   id="client-country"
                   name="client-country"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:text-regent-gray dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:text-regent-gray dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
             </div>
@@ -208,7 +208,7 @@ const NewInvoiceForm = () => {
                   type="text"
                   id="project-description"
                   name="project-description"
-                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none md:text-base dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue"
+                  className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa focus-visible:border-purple-mimosa focus-visible:outline-none dark:border-dark dark:bg-dark dark:focus-visible:border-medium-slate-blue md:text-base"
                 />
               </div>
             </div>

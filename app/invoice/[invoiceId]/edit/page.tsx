@@ -17,7 +17,7 @@ const InvoiceEditPage = async ({ params }) => {
   console.log("invoice: ", invoice);
 
   return (
-    <div className="bg-white pt-8 md:pt-14 dark:bg-mirage">
+    <div className="bg-white pt-8 dark:bg-mirage md:pt-0">
       <InvoiceEditForm invoice={invoice} />
     </div>
   );
