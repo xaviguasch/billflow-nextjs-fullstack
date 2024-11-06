@@ -8,14 +8,14 @@ import Invoice from "@/models/Invoice";
 // export const revalidate = 3600;
 
 const HomePage = async ({ searchParams }) => {
-  connectDB();
+  await connectDB();
 
   const invoices = await Invoice.find({}).lean();
 
   const filter = searchParams?.status ?? "all";
 
   return (
-    <main className="">
+    <main className="lg:flex lg:justify-center">
       <InvoiceGroup invoices={invoices} filter={filter} />
     </main>
   );

@@ -11,19 +11,6 @@ import "react-datepicker/dist/react-datepicker.css";
 const DatePickerInForm = ({ invoiceDate }) => {
   const [date, setStartDate] = useState(invoiceDate || new Date());
 
-  // const [selected, setSelected] = useState<Date>();
-  console.log(".............");
-
-  console.log(invoiceDate);
-
-  console.log(".............");
-
-  console.log("==========");
-
-  console.log(date);
-
-  console.log("==========");
-
   return (
     <div className="flex flex-col items-stretch justify-start space-y-2.5 md:col-start-1 md:col-end-2">
       <label
@@ -33,7 +20,7 @@ const DatePickerInForm = ({ invoiceDate }) => {
         Invoice Date
       </label>
       <DatePicker
-        className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa md:text-base dark:border-dark dark:bg-dark"
+        className="w-full rounded border border-link-water px-5 py-[14px] text-xs font-bold focus:border-purple-mimosa dark:border-dark dark:bg-dark md:text-base"
         id="invoice-date"
         name="invoice-date"
         onChange={(date) => {
