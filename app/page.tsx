@@ -15,7 +15,7 @@ const HomePage = async ({ searchParams }) => {
   const filter = searchParams?.status ?? "all";
 
   return (
-    <main className="lg:flex lg:justify-center">
+    <main className="md:flex md:justify-center">
       <InvoiceGroup invoices={invoices} filter={filter} />
     </main>
   );
