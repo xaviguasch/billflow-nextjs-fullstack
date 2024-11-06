@@ -29,11 +29,21 @@ export default function ThemeSwitch() {
 
   if (resolvedTheme === "dark") {
     console.log("darkmode");
-    return <IconSunSVG onClick={() => setTheme("light")} />;
+    return (
+      <IconSunSVG
+        className="cursor-pointer"
+        onClick={() => setTheme("light")}
+      />
+    );
   }
 
   if (resolvedTheme === "light") {
     console.log("lightmode");
-    return <IconMoonSVG onClick={() => setTheme("dark")} />;
+    return (
+      <IconMoonSVG
+        className="cursor-pointer"
+        onClick={() => setTheme("dark")}
+      />
+    );
   }
 }

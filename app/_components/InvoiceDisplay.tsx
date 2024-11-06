@@ -60,7 +60,7 @@ const InvoiceDisplay = ({ invoice }) => {
 
   return (
     <div>
-      <div className="flex flex-col justify-start gap-8 px-6 pt-8 md:px-10 md:pb-32 md:pt-12">
+      <div className="align-center flex flex-col justify-start gap-8 px-6 pt-8 md:mx-auto md:max-w-[730px] md:px-10 md:pb-32 md:pt-12 lg:px-0 lg:py-20">
         <div className="flex flex-row items-center gap-x-6 md:gap-x-8">
           <IconArrowLeftSVG />
           <Link
@@ -72,7 +72,7 @@ const InvoiceDisplay = ({ invoice }) => {
         </div>
 
         <div className="flex flex-col items-stretch justify-start gap-4 md:gap-6">
-          <div className="rounded-lg bg-white px-6 py-6 text-xs md:flex md:flex-row md:justify-between md:px-8 md:py-5 md:align-middle dark:bg-dark">
+          <div className="rounded-lg bg-white px-6 py-6 text-xs dark:bg-dark md:flex md:flex-row md:justify-between md:px-8 md:py-5 md:align-middle">
             <div className="flex flex-row items-center justify-between md:justify-start md:gap-5">
               <span className="text-wild-blue-yonder dark:text-link-water">
                 Status
@@ -112,7 +112,7 @@ const InvoiceDisplay = ({ invoice }) => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-start gap-8 bg-white px-6 py-6 text-xs text-wild-blue-yonder md:gap-0 md:rounded-lg md:p-8 dark:bg-dark dark:text-link-water">
+          <div className="flex flex-col justify-start gap-8 bg-white px-6 py-6 text-xs text-wild-blue-yonder dark:bg-dark dark:text-link-water md:gap-0 md:rounded-lg md:p-8">
             <div className="flex flex-col items-start justify-start gap-y-7 md:flex-row md:items-start md:justify-between md:gap-0">
               <div>
                 <p>
@@ -169,7 +169,7 @@ const InvoiceDisplay = ({ invoice }) => {
               </div>
             </div>
 
-            <div className="mt-1 rounded-lg bg-alabaster md:mt-12 dark:bg-ebony-clay">
+            <div className="mt-1 rounded-lg bg-alabaster dark:bg-ebony-clay md:mt-12">
               <div className="mb-10 flex flex-col gap-y-6 p-6 md:mb-0 md:p-8 md:pb-9">
                 <div className="hidden text-wild-blue-yonder md:grid md:grid-cols-5">
                   <span className="col-span-2">Item Name</span>
@@ -184,15 +184,15 @@ const InvoiceDisplay = ({ invoice }) => {
                     className="flex flex-row items-center justify-between text-xs md:grid md:grid-cols-5 md:text-base md:font-bold"
                   >
                     <div className="md:col-start-1 md:col-end-2">
-                      <p className="text-cinder md:text-base md:font-bold dark:text-white">
+                      <p className="text-cinder dark:text-white md:text-base md:font-bold">
                         {item.name}
                       </p>
-                      <p className="text-wild-blue-yonder md:hidden dark:text-regent-gray">
+                      <p className="text-wild-blue-yonder dark:text-regent-gray md:hidden">
                         {item.quantity} x €{item.price}
                       </p>
                     </div>
                     <div className="md:col-start-3 md:col-end-4 md:justify-self-end">
-                      <p className="text-cinder md:hidden dark:text-white">
+                      <p className="text-cinder dark:text-white md:hidden">
                         €{item.quantity * item.price}
                       </p>
                       <span className="hidden text-wild-blue-yonder md:block">
@@ -215,7 +215,7 @@ const InvoiceDisplay = ({ invoice }) => {
                 ))}
               </div>
 
-              <div className="item flex flex-row items-center justify-between rounded-b-lg bg-bright-grey p-6 text-white md:px-8 md:py-6 dark:bg-cinder">
+              <div className="item flex flex-row items-center justify-between rounded-b-lg bg-bright-grey p-6 text-white dark:bg-cinder md:px-8 md:py-6">
                 <p className="hidden text-[11px] md:block">Grand Total</p>
                 <p className="text-xs md:hidden">Amount Due</p>
                 <p className="text-xl font-bold md:text-2xl">
@@ -233,7 +233,7 @@ const InvoiceDisplay = ({ invoice }) => {
         </div>
       </div>
 
-      <div className="mt-14 flex grow flex-row items-center justify-stretch gap-x-2 bg-white p-6 md:hidden dark:bg-dark">
+      <div className="mt-14 flex grow flex-row items-center justify-stretch gap-x-2 bg-white p-6 dark:bg-dark md:hidden">
         <Link
           className="rounded-3xl bg-alabaster px-6 py-4 text-xs font-bold text-wild-blue-yonder transition-colors duration-300 ease-in-out hover:bg-link-water dark:bg-ebony-clay dark:text-link-water"
           href={`/invoice/${invoice._id}/edit`}
